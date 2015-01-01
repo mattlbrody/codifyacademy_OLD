@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Angular Api Project - TV Show Premieres</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/main.css">
+
+        <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    
+
+        <div class="container">
+          
+          <div class="col-md-8 col-md-offset-2">
+            <h1>Hey all! Today we create a real world javascript app using the Angular Framework!</h1>
+            <p>This tutorial will expand your angular.js skills by creating a simple real world web application.</p>
+            <p>This simple web application will allow its users to view, search and filter TV Show Premieres for the next 7 days. Using simple AJAX & JSON Data along with Angular.js to display everything. </p>
+            <p>Before we get started, you may want to take a look at the demo from above, to see what we will be creating in this tutorial. <a href="http://www.codifyacademy.com/premierDemo/index.html" target="_blank"><button type="button" class="btn btn-info">TV Premier Demo</button></a></p>
+            <h2>Getting Started</h2>
+            <p>To begin, we need a skeleton AngularJS application which already has all the required JavaScript and CSS to create the TV Show Premieres app. That folder will be in your email inbox, take a minute to download it and open the project files in sublime text 3</p>
+
+            <p>Once you have downloaded the files you should have a directory structure as shown below:</p>
+            <img class="img-responsive" src="img/fileTree.jpg" alt="project file tree picture">
+            <p>Open index.html in your browser, you should see a very simple web page with just a title and some basic formatting as seen below:</p>
+            <img class="img-responsive" src="img/template.jpg" alt="template picture">
+            <h2>Loading In Our Data</h2>
+            <p>The first thing we are going to need to create our TV Show app, is information about TV shows. We are going to use an API provided by Trakt.tv <strong>(Keep calm, this is not as hard as it sounds)</strong>. Before we can get started you are going to need an API key, you can register for one on their website <a href="http://trakt.tv/api-docs/authentication" target="_blank"><button type="button" class="btn btn-info">Get API Key</button></a></p>
+            <p><strong>Why use this API? Do I really have to register?</strong> We are using this API so our app will use real data and will actually provide some use once completed. API's allow us to connect with other peoples databases no matter what language we use. Today will give you a light intro on API usage as well.</p>
+            <p>Now that you have your own API key, we can utilize the Trakt API to get some information on TV shows. We are going to use one of the available API calls for this tutorial, more information on this is available
+            <a target="_blank" href="http://trakt.tv/api-docs/calendar-premieres">in the api docs</a>
+            . This API call will provide us with all the TV Show Premieres within a specified time frame.</p>            
+            <h3>Lets get this show (tv humor) started!</h3>
+            <p>Open
+            <code>mainController.js</code>
+            and modify it to match the below code: - make sure you put your new API key inside the quotes<code>" xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx "</code> - overwriting the <code>[YOUR API KEY HERE]</code></p>
+            <pre class="prettyprint">
+app.controller("mainController", function($scope, $http){
+
+    $scope.apiKey = "[YOUR API KEY HERE]";
+    $scope.init = function() {
+        //API requires a start date
+        var today = new Date();
+        //Create the date string and ensure leading zeros if required
+        var apiDate = today.getFullYear() + ("0" + (today.getMonth() + 1)).slice(-2) + "" + ("0" + today.getDate()).slice(-2);
+        $http.jsonp('http://api.trakt.tv/calendar/premieres.json/' + $scope.apiKey + '/' + apiDate + '/' + 7 + '/?callback=JSON_CALLBACK').success(function(data) {
+            console.log(data);
+        }).error(function(error) {
+
+        });
+    };
+});
+            </pre>
+            <p>If you look within the
+            <code>index.html</code>
+            file, for the following line:</p>
+            <pre class="prettyprint">
+&lt;div class="container main-frame" ng-app="TVPremieresApp" ng-controller="mainController" ng-init="init()"&gt;
+            </pre>
+            <p>You will see that the
+            <code>ng-init</code>
+            method is calling the
+            <code>init</code>
+            function, this means that the
+            <code>init()</code>
+            function within our
+            <code>mainController</code>
+            will be called after the page has been loaded.</p>
+            <p>If you read the API
+            <a target="_blank" href="http://trakt.tv/api-docs/calendar-premieres" sl-processed="1">documentation</a>
+            for the
+            <code>calendar/premieres</code>
+            method you will have seen that it takes three parameters <strong>(paremters are just pieces of information)</strong>, your API key, the start date (e.g. 20130616) and the number of days.</p>
+            <p>To provide all three parameters, we first need to get today's date using JavaScripts
+            <code>Date()</code>
+            method and format it to the API specified date format to create the
+            <code>apiDate</code>
+            string. Now that we have everything we need, we can create a
+            <code>$http.jsonp</code>
+            call to the API method. This will allow our web app to call a URL that is not within our own domain and receive some JSON data. Ensure that
+            <code>?callback=JSON_CALLBACK</code>
+            is prepended onto the request URI so that our attached
+            <code>.success</code>
+            callback function is called on response.</p>
+            <p>Within our
+            <code>.success</code>
+            function we then simply output the received data to the console. Open
+            <code>index.html</code>
+            within your browser and open the JavaScript console, you should see something like the following:</p>
+            <img class="img-responsive" src="img/obj1.jpg" alt="JSON objects">
+            <p>This demonstrates that we are successfully performing a call to the Trakt API, authenticating with our API key and receiving some JSON data. Now that we have our TV show data, we can move on to the step.</p>
+            <h2>Displaying Our Data</h2>
+
+            <!-- JSON Objects -->
+            <h3>Processing the JSON Objects</h3>
+            <p>Before we can display our data, we need to process and store it. As the API returns the premiere episodes grouped by date, we want to remove this grouping and just create a single array with all the premiere episodes and their associated data. Modify
+            <code>mainController.js</code>
+            to be as follows:</p>
+            <pre class="prettyprint">
+app.controller("mainController", function($scope, $http){
+    $scope.apiKey = "[YOUR API KEY]";
+    $scope.results = [];
+    $scope.init = function() {
+        //API requires a start date
+        var today = new Date();
+        //Create the date string and ensure leading zeros if required
+        var apiDate = today.getFullYear() + ("0" + (today.getMonth() + 1)).slice(-2) + "" + ("0" + today.getDate()).slice(-2);
+        $http.jsonp('http://api.trakt.tv/calendar/premieres.json/' $scope.apiKey + '/' + apiDate + '/' + 7 + '/?callback=JSON_CALLBACK').success(function(data) {
+            //As we are getting our data from an external source, we need to format the data so we can use it to our desired effect
+            //For each day, get all the episodes
+            angular.forEach(data, function(value, index){
+                //The API stores the full date separately from each episode. Save it so we can use it later
+                var date = value.date;
+                //For each episodes, add it to the results array
+                angular.forEach(value.episodes, function(tvshow, index){
+                    //Create a date string from the timestamp so we can filter on it based on user text input
+                    tvshow.date = date; //Attach the full date to each episode
+                    $scope.results.push(tvshow);
+                });
+            });
+        }).error(function(error) {
+
+        });
+    };
+});         
+            </pre>
+            <p>The above code is well commented and should be easy to follow, lets take a look at these changes. First, we declare a scope variable
+            <code>$scope.results</code>
+            as an array which will hold our processed results. We then use
+            <code>angular.forEach</code>
+            (which is similar to jQuery's
+            <code>$.each</code>
+            method for those who know it) to loop through each date group and store the date in a local
+            <code>date</code>
+            variable.</p>
+            <p>We then create another loop which loops through each of the TV shows within that date group, adds the locally stored date to the
+            <code>tvshow</code>
+            object and then finally adds each
+            <code>tvshow</code>
+            object to the
+            <code>$scope.results</code>
+            array. With all of this done, our
+            <code>$scope.results</code>
+            array will look like the following:</p>
+            <img class="img-responsive" src="img/obj2.jpg" alt="more advanced JSON objects">
+            <h3>Creating the List HTML</h3>
+            <p>We now have some data we wish to display within a list, on our page. We can create some HTML with
+            <code>ng-repeat</code>
+            to dynamically create the list elements based on the data within
+            <code>$scope.results</code>
+            . Add the following HTML code within the unordered list that has the
+            <code>episode-list</code>
+            class in
+            <code>index.html</code>:</p>
+            <pre class="prettyprint">
+&lt;li ng-repeat="tvshow in results"&gt;
+    &lt;div class="row-fluid"&gt;
+        &lt;div class="col-sm-3"&gt;
+            &lt;img src="{{tvshow.episode.images.screen}}" /&gt;
+            &lt;div class="ratings"&gt;
+                &lt;strong&gt;Ratings:&lt;/strong&gt; 
+                &lt;span class="label label-default"&gt;&lt;i class="fa fa-thumbs-up"&gt;&lt;/i&gt; {{tvshow.episode.ratings.loved}}&lt;/span&gt; 
+                &lt;span class="label label-default"&gt;&lt;i class="fa fa-thumbs-down"&gt;&lt;/i&gt; {{tvshow.episode.ratings.hated}}&lt;/span&gt; 
+                &lt;span class="label label-danger" ng-class="{'label-success': tvshow.episode.ratings.percentage >= 50}"&gt;&lt;strong&gt;%&lt;/strong&gt; {{tvshow.episode.ratings.percentage}}
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="col-sm-6"&gt;
+            &lt;h3&gt;{{tvshow.show.title}}: {{tvshow.episode.title}}&lt;/h3&gt;
+            &lt;p&gt;{{tvshow.episode.overview}}&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class="col-sm-3"&gt;
+            &lt;div class="fulldate pull-right label label-primary"&gt;{{tvshow.date}}&lt;/div&gt;
+            &lt;ul class="show-info"&gt;
+                &lt;li&gt;&lt;strong&gt;On Air:&lt;/strong&gt; {{tvshow.show.air_day}} {{tvshow.show.air_time}}&lt;/li&gt;
+                &lt;li&gt;&lt;strong&gt;Network:&lt;/strong&gt; {{tvshow.show.network}}&lt;/li&gt;
+                &lt;li&gt;&lt;strong&gt;Season #:&lt;/strong&gt; {{tvshow.episode.season}}&lt;/li&gt;
+                &lt;li&gt;&lt;strong&gt;Genres:&lt;/strong&gt; &lt;span class="label label-inverse genre" ng-repeat="genre in tvshow.show.genres"&gt;{{genre}}&lt;/span&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/li&gt;
+            </pre>
+            <p>This HTML is simply creating a single list element with
+            <code>ng-repeat</code>
+            .
+            <code>ng-repeat="tvshow in results"</code>
+            is telling angular to repeat this list element for each object within the
+            <code>$scope.results</code>
+            array. Remember that we do not need to include the
+            <code>$scope</code>
+            , as we are within an element with a specified controller (refer to the previous tutorial for more on this).</p>
+            <p>Inside the
+            <code>li</code>
+            element we can then reference
+            <code>tvshow</code>
+            as a variable which will hold all of the objects data for each of the TV shows within
+            <code>$scope.results</code>
+            . Below is an example of one of the objects within
+            <code>$scope.results</code>
+            so you can easily see how to reference each slice of data:</p>
+            <pre class="prettyprint">
+{
+    "show":{
+        "title":"Agatha Christie's Marple",
+        "year":2004,
+        "url":"http://trakt.tv/show/agatha-christies-marple",
+        "first_aired":1102838400,
+        "country":"United Kingdom",
+        "overview":"Miss Marple is an elderly spinster who lives in the village of St. Mary Mead and acts as an amateur detective. Due to her long and eventful life crimes often remind her of other incidents. Although Miss Marple looks sweet, frail, and old, she fears nothing; either dead or living.",
+        "runtime":120,
+        "network":"ITV",
+        "air_day":"Monday",
+        "air_time":"9:00pm",
+        "certification":"TV-14",
+        "imdb_id":"tt1734537",
+        "tvdb_id":"78895",
+        "tvrage_id":"2515",
+        "images":{
+            "poster":"http://slurm.trakt.us/images/posters/606.jpg",
+            "fanart":"http://slurm.trakt.us/images/fanart/606.jpg",
+            "banner":"http://slurm.trakt.us/images/banners/606.jpg"
+        },
+        "ratings":{
+            "percentage":91,
+            "votes":18,
+            "loved":18,
+            "hated":0
+        },
+        "genres":[
+            "Drama",
+            "Crime",
+            "Adventure"
+        ]
+    },
+    "episode":{
+        "season":6,
+        "number":1,
+        "title":"A Caribbean Mystery",
+        "overview":"\"Would you like to see a picture of a murderer?\", Jane Marple is asked by Major Palgrave whilst on a luxurious holiday in the West Indies. When she replies that she would like to hear the story, he explains. There once was a man who had a wife who tried to hang herself, but failed. Then she tried again later, and succeeded in killing herself. The man remarried to a woman who then tried to gas herself to death. She failed, but then tried again later and succeeded. Just as Major Palgrave is about to show the picture to her, he looks over her shoulder, appears startled, and changes the subject. The next morning, a servant, Victoria Johnson, finds him dead in his room. Doctor Graham concludes that the man died of heart failure; he showed all the symptoms, and had a bottle of serenite (a drug for high blood pressure) on his table.",
+        "url":"http://trakt.tv/show/agatha-christies-marple/season/6/episode/1",
+        "first_aired":1371366000,
+        "images":{
+            "screen":"http://slurm.trakt.us/images/fanart/606-940.jpg"
+        },
+        "ratings":{
+            "percentage":0,
+            "votes":0,
+            "loved":0,
+            "hated":0
+        }
+    },
+    "date":"2013-06-16"
+}                
+            </pre>
+            <p>As an example, within the
+            <code>li</code>
+            element, we can get the show title by referencing
+            <code>tvshow.show.title</code>
+            and wrapping it in double curly brackets:
+            <code>{{ }}</code>
+            . With this understanding, it should be easy to see what information will be displayed for each list element. Thanks to the CSS bundled with the skeleton structure, if you save these changes and open
+            <code>index.html</code>
+            within your browser, you should see a nicely formatted list of TV shows with the associated information and images. This is shown in the image below:</p>
+            <img class="img-responsive" src="img/screenshot1.jpg" alt="screen shot picture">
+
+            <!--  -->
+            <h3>Conditional Classes</h3>
+            <p>You may or may not have noticed:</p>
+            <pre class="prettyprint">
+ng-class="{'label-success': tvshow.episode.ratings.percentage >= 50}"                
+            </pre>
+            <p>...which is attached to one of the span elements, within the ratings section, in the above HTML.
+            <code>ng-class</code>
+            allows us to conditionally apply classes to HTML elements. This is particularly useful here, as we can then apply a different style to the percentage
+            <code>span</code>
+            element depending on whether the TV show rating percentage is high or not.</p>
+            <p>In the above HTML example, we want to apply the class
+            <code>label-success</code>
+            , which is a Twitter Bootstrap class, which will style the span to have a green background and white text. We only want to apply this class to the element if the rating percentage is greater than or equal to 50. We can do this as simply as
+            <code>tvshow.episode.ratings.percentage >= 50</code>
+            . Take a look down the list of formatted TV shows in your browser, if any of the percentages meet this condition, they should be displayed green.</p>
+            <h2>Creating a Search Filter</h2>
+            <p>SUCCESS! We now have a list of upcoming TV show premieres, which is great, but it doesn't offer much in the way of functionality. We are now going to add a simple text search which will filter all of the objects within the results array.</p>
+            <h3>Binding HTML Elements to Scope Variables</h3>
+            <p>First we need to declare a
+            <code>$scope.filterText</code>
+            variable within
+            <code>mainController.js</code>
+            as follows:</p>
+            <pre class="prettyprint">
+app.controller("mainController", function($scope, $http){
+    $scope.apiKey = "[YOUR API KEY]";
+    $scope.results = [];
+    $scope.filterText = null;
+    $scope.init = function() {
+        //API requires a start date
+        var today = new Date();
+        //Create the date string and ensure leading zeros if required
+        var apiDate = today.getFullYear() + ("0" + (today.getMonth() + 1)).slice(-2) + "" + ("0" + today.getDate()).slice(-2);
+        $http.jsonp('http://api.trakt.tv/calendar/premieres.json/' $scope.apiKey + '/' + apiDate + '/' + 7 + '/?callback=JSON_CALLBACK').success(function(data) {
+            //As we are getting our data from an external source, we need to format the data so we can use it to our desired affect
+            //For each day get all the episodes
+            angular.forEach(data, function(value, index){
+                //The API stores the full date separately from each episode. Save it so we can use it later
+                var date = value.date;
+                //For each episodes add it to the results array
+                angular.forEach(value.episodes, function(tvshow, index){
+                    //Create a date string from the timestamp so we can filter on it based on user text input
+                    tvshow.date = date; //Attach the full date to each episode
+                    $scope.results.push(tvshow);
+                });
+            });
+        }).error(function(error) {
+
+        });
+    };
+});                
+            </pre>
+            <p>Now we need to add a text input so that the user can actually input a search term. We then need to bind this input to the newly declared variable. Add the following HTML within the
+            <code>div</code>
+            which has the
+            <code>search-box</code>
+            class in
+            <code>index.html</code>.</p>
+            <pre class="prettyprint">
+&lt;label&gt;Filter: &lt;/label&gt;
+&lt;input type="text" ng-model="filterText"/&gt;                
+            </pre>
+            <h3>Enforcing Filtering On
+            <code>ng-repeat</code>
+            Output</h3>
+            <p>Now that we have the text to filter on, we need to add the filtering functionality to
+            <code>ng-repeat</code>
+            . Thanks to the built-in filter functionality of AngularJS, we do not need to write any JavaScript to do this, just modify your
+            <code>ng-repeat</code>
+            as follows:</p>
+            <pre class="prettyprint">
+&lt;li ng-repeat="tvshow in results | filter: filterText"&gt;               
+            </pre>
+            <p>It's as simple as that! We are telling AngularJS - before we output the data using
+            <code>ng-repeat</code>
+            , we need to apply the filter based on the filterText variable. Open
+            <code>index.html</code>
+            in a browser and perform a search. Assuming you searched for something that exists, you should see a selection of the results.</p>
+
+            <!-- genre filter -->
+            <h3>Creating a Genre Custom Filter</h3>
+            <p>You can see from the above HTML that we have created a select input bound to a model variable called
+            <code>genreFilter</code>
+            . Using
+            <code>ng-options</code>
+            we are able to dynamically populate this select input using an array called
+            <code>availableGenres</code>
+            .</p>
+            <p>First of all, we need to declare these scope variables. Update your
+            <code>mainController.js</code>
+            file to be as follows:</p>
+            <pre class="prettyprint">
+&lt;label&gt;Genre: &lt;/label&gt;
+&lt;select ng-model="genreFilter" ng-options="label for label in availableGenres"&gt;
+    &lt;option value=""&gt;All&lt;/option&gt;
+&lt;/select&gt;                
+            </pre>
+            <p>We have now declared both
+            <code>genreFilter</code>
+            and
+            <code>availableGenres</code>
+            which we saw referenced within our HTML. We have also added some JavaScript which will populate our
+            <code>availableGenres</code>
+            array. Within the
+            <code>init()</code>
+            function, while we are processing the JSON data returned from the API, we are now doing some additional processing and adding any genres that are not already within the
+            <code>availableGenres</code>
+            array to this array. This will then populate the select input with any available genres.</p>
+            <p>If you open
+            <code>index.html</code>
+            within your browser, you should see the genre select drop down populate as illustrated below:</p>
+            <pre class="prettyprint">
+app.controller("mainController", function($scope, $http){
+    $scope.apiKey = "[YOUR API KEY HERE]";
+    $scope.results = [];
+    $scope.filterText = null;
+    $scope.availableGenres = [];
+    $scope.genreFilter = null;
+    $scope.init = function() {
+        //API requires a start date
+        var today = new Date();
+        //Create the date string and ensure leading zeros if required
+        var apiDate = today.getFullYear() + ("0" + (today.getMonth() + 1)).slice(-2) + "" + ("0" + today.getDate()).slice(-2);
+        $http.jsonp('http://api.trakt.tv/calendar/premieres.json/' $scope.apiKey + '/' + apiDate + '/' + 7 + '/?callback=JSON_CALLBACK').success(function(data) {
+            //As we are getting our data from an external source, we need to format the data so we can use it to our desired affect
+            //For each day get all the episodes
+            angular.forEach(data, function(value, index){
+                //The API stores the full date separately from each episode. Save it so we can use it later
+                var date = value.date;
+                //For each episodes add it to the results array
+                angular.forEach(value.episodes, function(tvshow, index){
+                    //Create a date string from the timestamp so we can filter on it based on user text input
+                    tvshow.date = date; //Attach the full date to each episode
+                    $scope.results.push(tvshow);
+                    //Loop through each genre for this episode
+                    angular.forEach(tvshow.show.genres, function(genre, index){
+                        //Only add to the availableGenres array if it doesn't already exist
+                        var exists = false;
+                        angular.forEach($scope.availableGenres, function(avGenre, index){
+                            if (avGenre == genre) {
+                                exists = true;
+                            }
+                        });
+                        if (exists === false) {
+                            $scope.availableGenres.push(genre);
+                        }
+                    });
+                });
+            });
+        }).error(function(error) {
+
+        });
+    };
+});                
+            </pre>
+            <img class="img-responsive" src="img/screenshot2.jpg" alt="screenshot picture">
+            <p>When the user chooses a genre, the
+            <code>$scope.genreFilter</code>
+            variable will be updated to equal the selected value.</p>
+
+            <!-- creating custom filter -->
+            <h3>Creating the Custom Filter</h3>
+            <p>As we are wanting to filter on a specific part of the TV show objects, we are going to create a custom filter function and apply it alongside the AngularJS filter within the
+            <code>ng-repeat</code>
+            .</p>
+            <p>At the very bottom of
+            <code>mainController.js</code>
+            , after all of the other code, add the following JavaScript:</p>
+            <pre class="prettyprint">
+app.filter('isGenre', function() {
+    return function(input, genre) {
+        if (typeof genre == 'undefined' || genre == null) {
+            return input;
+        } else {
+            var out = [];
+            for (var a = 0; a < input.length; a++){
+                for (var b = 0; b < input[a].show.genres.length; b++){
+                    if(input[a].show.genres[b] == genre) {
+                        out.push(input[a]);
+                    }
+                }
+            }
+            return out;
+        }
+    };
+});                
+            </pre>
+            <p>The above JavaScript declares a custom filter to our app called
+            <code>isGenre</code>
+            . The function within the filter takes two parameters,
+            <code>input</code>
+            and
+            <code>genre</code>
+            .
+            <code>input</code>
+            is provided by default (which we will see in a moment) and is all the data that the
+            <code>ng-repeat</code>
+            is processing.
+            <code>genre</code>
+            is a value we need to pass in. All this filter does, is take the specified genre and checks to see if each of the TV show objects within
+            <code>input</code>
+            have the specified genre attached to them. If an object has the specified genre, it adds it to the
+            <code>out</code>
+            array, which will then be returned to the
+            <code>ng-repeat</code>
+            . If this doesn't quite make sense, don't worry! It should shortly.</p>
+
+            <!-- applying custom filters -->
+            <h3>Applying the Custom Filter</h3>
+            <p>Now that we have our customer filter available, we can add this additional filter to our ng-repeat. Modify your
+            <code>ng-repeat</code>
+            in
+            <code>index.html</code>
+            as follows:</p>
+            <p>This simply chains another filter onto the
+            <code>ng-repeat</code>
+            output. Now the output will be processed by both filters before it is displayed on the screen. As you can see we have specified our custom filter as
+            <code>isGenre:</code>
+            and then we are passing the scope variable
+            <code>genreFilter</code>
+            as a parameter, which is how we provide our customer filter with the
+            <code>genre</code>
+            variable we talked about earlier. Remember that AngularJS is also providing our filter with the data that the
+            <code>ng-repeat</code>
+            is processing as the
+            <code>input</code>
+            variable.</p>
+            <pre class="prettyprint">
+&lt;li ng-repeat="tvshow in results | filter: filterText | isGenre:genreFilter"&gt;                
+            </pre>
+            <p>OK, our custom genre filter is complete. Open
+            <code>index.html</code>
+            in a browser and test out the new functionality. With this filter in place, a user can easily filter out genres they are not interested in.</p>
+
+            <!-- scope functions -->
+            <h3>Calling Scope Functions</h3>
+            <p>You may have noticed that each TV show listing also shows the genre itself. For some additional functionality, we are going to allow the user to click these genres, which will then automatically apply the genre filter for the genre they have clicked on. First of all, we need to create a scope function that the
+            <code>ng-click</code>
+            can call. Add the following code within the
+            <code>mainController</code>
+            on
+            <code>mainController.js</code>
+            :</p>
+            <pre class="prettyprint">
+$scope.setGenreFilter = function(genre) {
+    $scope.genreFilter = genre;
+}                
+            </pre>
+            <p>In the above code, this function takes a genre value and then sets the
+            <code>$scope.genreFilter</code>
+            to the specified value. When this happens, the genre filter select box's value will update and the filter will be applied to the
+            <code>ng-repeat</code>
+            output. To trigger this function when the genre span elements are clicked, add an
+            <code>ng-click</code>
+            to the genre span elements within
+            <code>index.html</code>
+            as follows: </p>
+            <pre class="prettyprint">
+&lt;span class="label label-inverse genre" ng-repeat="genre in tvshow.show.genres" ng-click="setGenreFilter(genre)"&gt;{{genre}}&lt;/span&gt;                
+            </pre>
+            <p>The
+            <code>ng-click</code>
+            calls our previously created
+            <code>setGenreFilter</code>
+            function and specifies a genre. Open
+            <code>index.html</code>
+            and try it out!</p>
+
+            <!-- custom ordering -->
+            <h3>Custom Ordering With AngularJS</h3>
+            <p>Our TV show premiere app is looking pretty good, users can easily refine the results displayed using a series of intuitive filters. To enhance this experience we are going to add some custom ordering functionality so our users will be able to choose a range of ordering options.</p>
+            <p>Add the following HTML under the genre select drop down:</p>
+            <pre class="prettyprint">
+&lt;label&gt;Order by: &lt;/label&gt;
+&lt;select ng-model="orderField" ng-options="label for label in orderFields" class="input-medium"&gt;&lt;/select&gt;
+&lt;select ng-model="orderReverse"class="input-medium"&gt;
+    &lt;option value="true"&gt;Descending&lt;/option&gt;
+    &lt;option value="false"&gt;Ascending&lt;/option&gt;
+&lt;/select&gt;                
+            </pre>
+            <p>With this code added, we have two more drop downs. One to select how to order the data and another to choose the direction in which to order the data. We now need to create a function within our controller to make the order comparison. Add the following JavaScript under our
+            <code>setGenreFilter</code> function:</p>
+            <pre class="prettyprint">
+$scope.customOrder = function(tvshow) {
+    switch ($scope.orderField) {
+        case "Air Date":
+            return tvshow.episode.first_aired;
+            break;
+        case "Rating":
+            return tvshow.episode.ratings.percentage;
+            break;
+    }
+};                
+            </pre>
+            <p>We also need to declare some additional scope variables:</p>
+            <pre class="prettyprint">
+$scope.orderFields = ["Air Date", "Rating"];
+$scope.orderDirections = ["Descending", "Ascending"];
+$scope.orderField = "Air Date"; //Default order field
+$scope.orderReverse = false;                
+            </pre>
+            <p>If you now open
+            <code>index.html</code>
+            within your browser, you should see the added drop downs populated with
+            <strong>Air Date</strong>
+            already selected as the default order field. This is shown in the figure below:</p>
+            <img class="img-responsive" src="img/screenshot3.jpg" alt="screenshot picture">
+            <p>Finally, as we have done with our other filters, we are going to need to append this to our
+            <code>ng-repeat</code>
+            , update this as follows: </p>
+            <pre class="prettyprint">
+&lt;li ng-repeat="tvshow in results | filter: filterText | isGenre:genreFilter | orderBy:customOrder:orderReverse"&gt;                
+            </pre>
+            <p>We are now applying an order-by-filter on our data in addition to the other filters. We are telling the order by to use our
+            <code>customOrder</code>
+            function and we are passing our
+            <code>orderReverse</code>
+            scope variable through as well. Open
+            <code>index.html</code>
+            in a browser and see the ordering in action.</p>
+
+
+            <!-- conclusion -->
+            <h3>Conclusion</h3>
+            <p>AngularJS has allowed us to quickly create a detailed and functional web application with minimum effort. Utilizing AngularJS's built-in filter functions, alongside some of our own custom code, our web application allows our users to easily filter and search through the TV show premieres.</p>
+            <p>After reading this tutorial you should now be able to understand and use the following principles:</p>
+            <ul>
+              <li>
+              Using
+              <code>ng-repeat</code>
+              to display information on screen.
+              </li>
+              <li>
+              Binding to inputs, allowing users to search and filter
+              <code>ng-repeat</code>
+              output.
+              </li>
+              <li>
+              Chaining filters on
+              <code>ng-repeat</code>
+              to perform multiple filtering functions.
+              </li>
+              <li>Custom ordering of data.</li>
+              <li>
+              Using events such as
+              <code>ng-click</code>
+              to respond to user interaction.
+              </li>
+              <li>
+              Using
+              <code>ng-class</code>
+              to conditionally apply styling to page elements.
+              </li>
+            </ul>
+            <p>So in conclusion, the topics covered in this tutorial should give you a strong foundation and understanding of what you can achieve when creating rich web applications in AngularJS.</p>
+          </div>
+
+        </div>
+
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
+
+        <script src="js/vendor/bootstrap.min.js"></script>
+        <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+        <script src="js/main.js"></script>
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X');ga('send','pageview');
+        </script>
+    </body>
+</html>

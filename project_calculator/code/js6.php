@@ -1,0 +1,3 @@
+else {
+  input.innerHTML += btnVal;
+}

@@ -1,0 +1,176 @@
+* {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 16px;
+}
+.hero {
+    background: url("../img/2.png" ) no-repeat scroll 0 0 / cover;
+    height: 600px;
+    border-bottom: 1px solid black;
+}
+.logo {
+    height: 23px;
+    left: 2em;
+    position: relative;
+    top: 2em;
+    width: 205px;
+    color:white;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 24px;
+}
+.opening-header {
+    text-align: center;
+    position: relative;
+    top:11em;
+}
+.opening-header h1 {
+    color: #FFFFFF;
+    font-size: 4em;
+    font-style: normal;
+    font-weight: 300;
+    margin-bottom: 15px;
+}
+.opening-header p {
+    color: white;
+    font-size: 1.1em;
+}
+p.sign_up {
+    padding-top:4em;
+}
+.form-wrapper p{
+    text-align: center;
+    font-size: 1.25em;
+}
+.from-wrapper form {
+    padding-top: 0.2em;
+}
+input.syllabus {
+    height: 50px;
+}
+a.syllabus {
+    padding:9px;
+    font-size: 22px;
+}
+.single-col {
+    padding: 2em 0;
+    width: 100%;
+}
+.overview {
+    background: none repeat scroll 0 0 #FFFFFF;
+    min-height: 750px;
+    padding: 3em 0;
+}
+img.adv-img {
+    top:5em;
+    position: relative;
+}
+ul {
+    list-style: none;
+    padding: 0px;
+}
+li {
+    color: #000000;
+    font-size: 1.1em;
+    font-style: normal;
+    font-weight: 300;
+    padding: 0.5em 0;
+}
+.fa-check-circle-o {
+    color: #6FCEB8;
+}
+
+.reviews {
+    background: url("../img/4.jpg") repeat scroll 0 0 #008FD3;
+    height: 450px;
+    padding: 3em 0;
+}
+.reviews h1 {
+    color: #FFFFFF;
+    font-size: 4em;
+    text-align: center;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+.reviews hr {
+    border-bottom: 1px solid #FFFFFF;
+    margin: 2em auto;
+    width: 120px;
+}
+.reviews p {
+    padding:0 2em;
+    color: #FFFFFF;
+}
+.person {
+    padding: 1em 2em 0 2em;
+}
+.person img {
+    border: 2px solid #0072A7;
+    border-radius: 9999px;
+    display: inline-block;
+    vertical-align: middle;
+}
+.person .text-block {
+    display: inline-table;
+    margin-left: 0.5em;
+    position: relative;
+    top: -5px;
+}
+.text-block p.name {
+    margin: 0.2em;
+}
+.text-block p.sub {
+    font-size: 0.9em;
+    font-style: italic;
+}
+
+.courses {
+    background: none repeat scroll 0 0 #FFFFFF;
+    padding: 3em 0;
+    position: relative;
+    font-size: 16px;
+}
+.courses h2 {
+    text-transform: uppercase;
+    color: #1ABC9C;
+    font-size: 1.3em;
+    font-style: normal;
+    font-weight: 400;
+    margin-bottom: 1em;
+}
+.courses p {
+    color: #000000;
+    font-size: 1.1em;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 1.5em;
+}
+p.upper {
+    display: inline-block;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+.upper {
+    text-transform: uppercase;
+}
+.email-capture {
+    background-color: #F1F1F1;
+    padding: 3em 0 5em;
+    text-align: center;
+}
+.email-capture h1 {
+    font-weight: 300;
+    color: #000000;
+}
+.email-capture form {
+    padding:0 5em;
+}
+
+.footer {
+    text-align: center;
+}
+.footer h4 a {
+    color: #000000;
+}
+form {
+    padding:0 195px;
+}

@@ -1,0 +1,321 @@
+/* Common Colors
+
+nav & find Food
+#da4936 possible 2nd bg color #f2f2b5
+
+nav border-bottom color
+#da3c36
+
+background color
+#f2f2db
+
+How? buttons
+#7bc1bf
+
+search input border color
+#8c8c84
+
+search input placeholder color
+#e2deda
+
+600px total nav is 45px - 7.5%
+@ 70px starts what to spend, 120px total 20%
+@ 190px Distance starts  total 135px 22.5%
+@325 what to eat total 85px 14.2%
+@410 find button starts 135px 22.5%
+@545 bottom padding 45px 7.5%
+
+
+*/
+
+body {
+	background-color: #f2f2db;
+	height: 100vh;
+	width: 100vw;
+	overflow: hidden;
+	padding-top: 7.5vh;
+
+}
+.navbar {
+	background-color: #da4936;
+	border-bottom: 2px solid #da3c36 !important;
+	height: 8vh;
+	min-height: 10px;
+}
+
+.amount {
+	height: 20vh;
+}
+.amount ul {
+	padding:1%;
+	margin:0 auto;
+	background-color: #fff;
+	border-radius: 50%;
+	width:10em;
+	height:10em;
+	-webkit-transition:all 0.3s ease-in-out;
+    -moz-transition:all 0.3s ease-in-out;
+    -o-transition:all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+.amount ul:hover,
+.amount ul.active {
+	background-color: #7bc1bf;
+	color: #fff;
+	cursor: pointer;
+}
+.amount ul li {
+	position: relative;
+	top:1.1em;
+	font-size: 36px;
+}
+
+#amount_selectable,
+#distance_selectable { list-style-type: none; margin: 0; padding: 0; }
+
+#amount_selectable li{ 
+	cursor: pointer;
+    float: left;
+    font-size: 3em;
+    height: 75px;
+    margin-left: 7%;
+    padding: 7px 0 0 10px;
+    width: 75px;
+}
+#distance_selectable li { 
+	cursor: pointer;
+    float: left;
+    font-size: 3em;
+    height: 75px;
+    margin-left: 7%;
+    padding: 7px 0 0 5px;
+    width: 75px;
+}
+
+#amount_selectable .ui-selecting,
+#amount_selectable .ui-selected,
+#distance_selectable .ui-selecting,
+#distance_selectable .ui-selected,
+.finder_selectable .ui-selecting,
+.finder_selectable .ui-selected { background: #7bc1bf; color: white; cursor: pointer;}
+.ui-state-default {
+    background: #fff;
+    border: 1px solid #7bc1bf;
+    border-radius: 50%;
+    color: #555555;
+    font-weight: normal;
+	-webkit-transition:all 0.3s ease-in-out;
+    -moz-transition:all 0.3s ease-in-out;
+    -o-transition:all 0.3s ease-in-out;
+    transition:all 0.3s ease-in-out;
+}
+.ui-state-default:hover,
+.ui-selectee.ui-selected {
+    background: #7bc1bf;
+    color: #fff;
+}
+
+.distance {
+	height: 24vh;
+}
+
+
+
+.food {
+	height: 20vh;
+}
+.form-control {
+    height: 45px;
+    font-size: 24px;
+}
+.input-lg {
+    background-color: #8c8c84;
+    border: 10px solid #8c8c84;
+    border-radius: 30px;
+    font-size: 22px;
+    margin: 0 3%;
+    padding: 5px;
+}
+.input-group .form-control {
+    border-radius: 30px; 
+}
+.input-group-addon {
+    border-radius: 30px;
+    -webkit-transition:all 0.3s ease-in-out;
+    -moz-transition:all 0.3s ease-in-out;
+    -o-transition:all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+.input-group-addon:hover {
+    color: rgb(51,51,51);
+}
+
+.find {
+	height: 15vh;
+}
+.find button {
+    background: none repeat scroll 0 0 #f2f2db;
+    border: medium none;
+    display: block;
+    margin: auto;
+}
+.find a {
+    background-color: #da4936;
+    border-radius: 5%;
+    color: white;
+    display: block;
+    font-size: 24px;
+    margin: 5% auto 0;
+    padding: 0.5em;
+    position: relative;
+    -webkit-transition:all 0.3s ease-in-out;
+    -moz-transition:all 0.3s ease-in-out;
+    -o-transition:all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+.find a:hover,
+.find a:focus {
+	background-color: #fff;
+	color: #da4936;
+	border: 1px solid #da4936;
+}
+
+
+
+
+
+
+
+/*========================================================================
+
+							Finder.php
+
+========================================================================*/
+body.finder {
+	padding-top:45px;
+}
+nav.finder {
+	height: 50px;
+}
+.fa-long-arrow-left {
+	font-weight: bold;
+	color: white;
+	padding-left: 10px;
+	-webkit-transition:all 0.3s ease-in-out;
+    -moz-transition:all 0.3s ease-in-out;
+    -o-transition:all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+.fa-long-arrow-left:hover {
+	color: lightgrey;
+}
+.finder_item {
+	border-top:5px solid grey !important;
+	margin-top: 5px;
+}
+.finder_item.first {
+	margin-top:;
+}
+.finder_item h4 {
+	font-weight: bold;
+}
+.finder_item img {
+	display: block;
+	margin: auto;
+	height: 100px;
+	width: 100px;
+}
+
+.finder_selectable li {
+    cursor: pointer;
+    float: left;
+    font-size: 3em;
+    height: 60px;
+    margin: 7% 0 0 3%;
+    width: 60px;
+}
+.finder_selectable li a i{ 
+	color: white;
+    padding: 10px 21px 0;
+    -webkit-transition:all 0.3s ease-in-out;
+    -moz-transition:all 0.3s ease-in-out;
+    -o-transition:all 0.3s ease-in-out;
+    transition:all 0.3s ease-in-out;
+}
+.finder_selectable li a i.fa-map-marker{ 
+    padding: 7px 13px 0;
+}
+.finder_selectable li:hover a i{ 
+	color: lightgrey;
+}
+li.google_map {
+	-o-transform: rotate(45deg);
+	-khtml-transform: rotate(45deg);
+	-webkit-transform: rotate(45deg); 
+	-moz-transform: rotate(45deg);
+}
+li.google_map a i{
+	-o-transform: rotate(-45deg);
+	-khtml-transform: rotate(-45deg);
+	-webkit-transform: rotate(-45deg); 
+	-moz-transform: rotate(-45deg);
+}
+li.google_map {
+    border-radius: 25%;
+    height: 54px;
+    margin-left: 13%;
+    margin-top: 13px;
+    width: 54px;
+}
+li.google_map_info {
+	margin-left: 43%;
+	margin-top: 15%;
+}
+.new_search {
+	border-bottom: 5px solid grey;
+}
+.new_search a{
+	color:black;
+	text-decoration: none;
+	-webkit-transition:all 0.3s ease-in-out;
+    -moz-transition:all 0.3s ease-in-out;
+    -o-transition:all 0.3s ease-in-out;
+    transition:all 0.3s ease-in-out;
+}
+.new_search a:hover{
+	color:#da4936;
+}
+.resturant_name {
+	margin:15% 0;
+}
+ul.menu_items li div {
+	padding:10px 0;
+	font-size: 20px;
+}
+
+/****** Style Star Rating Widget *****/
+.rating { 
+  border: none;
+  float: left;
+  margin-left: 7%;
+}
+.rating > input { display: none; } 
+.rating > label:before { 
+  margin-right: 5px;
+  font-size: 1em;
+  font-family: FontAwesome;
+  display: inline-block;
+  content: "\f005";
+}
+.rating > .half:before { 
+  content: "\f089";
+  position: absolute;
+}
+.rating > label { 
+  color: #ddd; 
+ float: right; 
+}
+.rating > input:checked ~ label { color: #FFD700;  } 
+
+
+

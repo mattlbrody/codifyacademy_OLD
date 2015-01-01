@@ -1,0 +1,205 @@
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+html, body {
+	height: 100%;
+	width: 100%;
+}
+blockquote {
+    color: #bbb;
+    font-family: Georgia,arial,sans-serif;
+    font-size: 20px;
+}
+p {
+	color: #888;
+}
+
+/* background setup */
+.background {
+    background-repeat:no-repeat;
+    /* custom background-position */
+    background-position:50% 50%;
+    /* ie8- graceful degradation */
+    background-position:50% 50%\9 !important;
+}
+
+/* fullscreen setup */
+.fullscreen,
+.content-a {
+    width:100%;
+    min-height:100%;
+}
+.not-fullscreen,
+.not-fullscreen .content-a,
+.fullscreen.not-overflow,
+.fullscreen.not-overflow .content-a {
+    height:100%;
+    overflow:hidden;
+}
+
+/* content centering styles */
+.content-a {
+	display:table;
+}
+.content-b {
+	display:table-cell;
+    position:relative;
+	vertical-align:middle;
+	text-align:center;
+	height: 530px;
+}
+
+/* visual styles */
+.not-fullscreen {
+    height:50%;
+}
+
+/*logo*/
+#logo img {
+    display: block;
+    margin: 1% auto 0;
+    position: relative;
+	width: 150px;
+}
+
+/*chevron down*/
+.fa-chevron-down {
+	color: #fff;
+	margin-top:3%;
+}
+.fa-chevron-down:hover,
+.fa-chevron-down:focus {
+	text-decoration: none;
+	color: white;
+	transition: all 0.3s ease;
+}
+/*nav*/
+.nav {
+	text-align: center;
+	width: 100%;
+}
+.navbar {
+	min-height: 30px;
+	margin-bottom: 0;
+	z-index: 1000;
+}
+.navbar-custom {
+    background-image: linear-gradient(to bottom, #fff 0px, #f8f8f8 100%);
+    background-repeat: repeat-x;
+    border-radius: 4px;
+    border-bottom: 1px solid #eee;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+.navbar-custom {
+    background-color: #fff;
+    border-color: #eee;
+}
+.nav > li > a:hover,
+.nav > li > a:focus,
+.nav > li.active {
+	background-color: red;
+	transition: all 0.5s ease-in-out;
+}
+ul.nav li {
+    display: inline-block;
+    float: none;
+    text-align: center;
+}
+ul.nav li a {
+    color: #444;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 7px 10px;
+}
+
+/*about*/
+#about {
+	border: 0 5px 5px 5px solid black;
+	background-color: #fff;
+	display: block;
+    padding-bottom: 110px;
+    padding-top: 100px;
+    position: relative;
+    z-index: 120;
+}
+p.developer {
+	margin-bottom: 35px;
+}
+img.personal_img {
+	display: block;
+	margin: 0 auto;
+}
+.languages {
+	margin-top: 5%;
+}
+div.languages:hover {
+	background-color: #000;
+	color: #fff;
+	border-radius: 25px;
+	transition: all 0.5s ease-in-out;
+	opacity: 0.7;
+}
+
+/*projects*/
+#projects {
+	background-color: #f2f2f2;
+	padding: 125px 25px;
+}
+#projects img {
+	cursor: pointer;
+	height: 200px;
+	width: 200px;
+}
+
+/*collaborate*/
+#collaborate {
+	background-color: #fff;
+}
+#collaborate h2 {
+	margin-top: 75px;
+}
+.email_me {
+	margin-top:50px;
+}
+.email_me:hover {
+	border: 1px solid black;
+	background-color: tomato;
+	transition: all 0.5s ease-in-out;
+}
+.email_me a:hover {
+	color: #fff;
+	text-decoration: none;
+}
+.collab_bg {
+	margin-top:50px;/*
+	background-image: url('../img/2048.jpg');*/
+	min-height: 75px;
+}
+.social ul {
+	text-align: center;	
+}
+.social ul li {
+	display: inline-block;
+	padding: 20px 15px 7px;
+
+}
+.social ul li a {
+	font-size: 36px;
+	text-decoration: none;
+	color: #000;
+}
+.social ul li a:hover {
+	transition: all 0.5s ease-in-out;
+	color: #f2f;
+}
+.message {
+	margin: 3% 0;
+	background-color: #f2f2f2;
+}
+
+/*copyright*/
+#copyright_bg {
+	background-color: ;
+}

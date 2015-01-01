@@ -1,0 +1,78 @@
+/* Basic reset */
+* {
+	
+	
+}
+
+/* Finally adding some IE9 fallbacks for gradients to finish things up */
+
+/* A nice BG gradient */
+html {
+	height: 100%;
+	background: white;
+	background-size: cover;
+}
+body {
+	background: transparent;
+	height: 100%;
+}
+
+section {
+	position: relative;
+	padding: 50px 0 0 0;
+}
+
+button {
+	margin-bottom: 25px !important;
+}
+
+section#introduction {
+	background: #fff;
+}
+section#html {
+	background: #f2f2f2;
+}
+#html {
+	
+}
+
+section#css {
+	background: #fff;
+}
+section#js {
+	background: #f2f2f2;
+
+}
+section#finish {
+	background: #fff;
+	padding: 0;
+}
+div.alert {
+	margin-bottom: 0 !important;
+	font-size: 34px;
+}
+p {
+	font-style: thin !important;
+}
+
+
+
+#css ol li {
+	padding: 3px 0;
+}
+.prettyprint.css .com {
+	color: #606;
+}
+.prettyprint.css .pln {
+	color:#008;
+}
+#css .red {
+	color:red;
+}
+
+.bg_img {
+	height: 700px;
+	padding: 50px 0;
+}
+
+

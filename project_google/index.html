@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>How to create a Google Search Replica</title>
+        <meta name="description" content="how to create a google search replica">
+        <meta name="author" content="Codify Academy">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" href="favicon.ico">
+        <!-- Bootstrap css -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <!-- author css -->
+        <link rel="stylesheet" href="css/main.css">
+        <!-- font awesome -->
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+        <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!-- start html here -->
+        <div class="container">
+
+            <!-- introduction -->
+            <div class="col-md-8 col-md-offset-2">
+                <h1 class="text-center">Codify Academy - A Google Replication</h1>
+                <h2>Description</h2>
+                <p>Today we will build the <span class="text-danger">All Mighty & Powerful GOOGLE </span>the most basic of projects - using some basic HTML elements & CSS properties</p>
+            </div>
+
+            <div class="clearfix"></div>
+            <img src="img/product.jpg" style="display:block; margin: 0 auto; border: 5px solid #151515; border-radius: 25px;">
+            <div class="clearfix"></div>
+
+            <!-- step 1 Create top navigation-->
+            <div class="col-md-8 col-md-offset-2">
+                <h2>Time to start!</h2>
+                <p>Are you ready? Great. <a href="google_student.zip">Download the google_student folder</a> and open it in sublime text & in browser</p>     
+                <h2>Step 1: Create Top Navigation</h2>
+                <p>Lets begin in sublime text on line 4 of index.html, lets first add a title to your document - add the title <code>Google</code>. Great with that done we can add the first HTML. We need to create a <code>&lt;ul&gt;</code>, add a ID of <code>top_nav</code>. Now create 7 <code>&lt;li&gt;</code> inside the new ul. Finally add <code>&lt;a&gt;</code> tags inside the first 3 list item tags. These list items will serve as the 7 items that appear on the top right side of googles homepage when we are signed in. - Seen Below</p>        
+                <div class="panel-group" id="accordion1">
+                  <div class="panel panel-danger">
+                    <div class="panel-heading">
+                      <h4 class="panel-title text-center">
+                        <a data-toggle="collapse" data-parent="#accordion1" href="#collapseOne">
+                          Lets begin with building the top navigation
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapseOne" class="panel-collapse collapse in">
+                      <div class="panel-body">
+                        <img src="img/product.nav_right.jpg" style="display:block; margin: 0 auto; border: 5px solid #151515;">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <div class="col-md-8 col-md-offset-2">
+                <p>Now start filling out your list item tags. Insert the related text in between the correlated link - add +(yourname) in the first anchor tag, Mail to your second anchor and Images for the third.</p>
+                <p>The next few list items are a bit tricky - Lets add what are called icons to your list items <i class="fa fa-th"></i> & <i class="fa fa-bell-o"></i>. To do this we need to create a <code>&lt;div&gt;</code> tag inside the 4th and 5th list item tags.  Add a class of <code>fa</code> & <code>fa-th</code> to the first new div tag, and add a class of <code>fa</code> & <code>fa-bell-o</code> to the second div. Nice job adding your first icons from <a href="http://fontawesome.io/" target="_blank">Fontawesome.io</a>, we will get deeper into these in a couple of weeks.</p>
+                <p>Inside the 6th list item tag add a <code>&lt;span&gt;</code> tag, add an ID and set it to <code>share</code>. (this is arbitrary and does nothing until we add CSS properties to the ID) Add the text Share in between the new span tags.  We will style this in a bit.</p>
+                <p>On to your last list item, add a <code>&lt;img&gt;</code> tag inside the last list item, give it a class of <code>profile_img</code>. Here we want to link an image of yourself - you can grab this from your +google page if you don't have one on hand or you can use a picture I included of myself, To do so set the image tage like so:  &lt;img <code>src="img/chris3.jpg</code>&gt; :)</p>
+                <div class="panel-group" id="accordion2">
+                  <div class="panel panel-info">
+                    <div class="panel-heading">
+                      <h4 class="panel-title text-center">
+                        <a data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+                          Click here to see my index.html page after Step:1
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapseTwo" class="panel-collapse collapse">
+                      <div class="panel-body">
+                        <pre class="prettyprint">
+&lt;ul id="top_nav"&gt;
+    &lt;li&gt;&lt;a href=""&gt;+Chris&lt;/a&gt;&lt;li&gt;
+    &lt;li&gt;&lt;a href=""&gt;Mail&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=""&gt;Images&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;div class="fa fa-th">&lt;/div&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;div class="fa fa-bell-o">&lt;/div&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span id="share">Share&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;img src="img/chris3.jpg"&gt;&lt;/li&gt;
+&lt;/ul&gt;                    
+                        </pre>                        
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <p>To finish the 1st step's HTML, we need to set the anchor tags to the correct links. Go to google.com while you are signed in. Click on your name in the top right corner, and get the url from the browser input and copy it into your 1st anchor href="", between the qutoes. It should look something like this <code>https://plus.google.com/u/0/</code>.</p>
+                <p>Next is the mail link, click on mail and grab the url, again copy it in between the quotes in your 2nd anchor element. It should look something like <code>https://mail.google.com/mail/u/0/?tab=wm#inboxhttps://mail.google.com/mail/u/0/?tab=wm#inbox</code>.</p>
+                <p>For the last anchor grab the image link from google.com. It should look something like this <code>https://www.google.com/imghp?hl=en&tab=wi&ei=l1EcVO_NLZKnyATKiIGYCw&ved=0CAQQqi4oAg</code>.</p>
+                <p>Now that we have your HTML done for your top navigation lets add some CSS to style it to look like Google page.</p>
+            </div>
+            <!-- step 2 Add CSS to the Top Navigation -->
+            <div class="col-md-8 col-md-offset-2">
+                <h2>Step 2: Add CSS to the Top Navigation</h2>
+                <p>Time to add a little style to your navigation! - Lets switch over to <code>main.css</code> we can just begin on line 1.</p> 
+                <p>Call the HTML element Unordered List with the ID of top_nav and give it two CSS properties - <code>float: ;</code> & <code>margin-right: ;</code>. Attach the value of <code>right</code> to the float property and the value of <code>25px</code> to the margin-right property. We are done with this css selecter, move below the closing ul#top_nav curly bracer.</p>
+                <p>The next CSS selector we want to call is for every list item inside any unordered list with the ID of top_nav. To your list items we want to set the <code>list-style: ;</code> property to have a value of <code>none</code>, this will remove the little dots that are on list item tags by default.</p>
+                <p>Next we want to set the <code>display: ;</code> property add a value of <code>inline-block</code> to it, that way your list items will appear in one line. Now we want to change the <code>text-align: ;</code> property value to <code>right</code>. Adjust the font size to 13px and vertical-align to bottom.</p>
+                <p>Last we want to add a little <code>padding</code> and <code>margin</code> to add a little space between each list item. Set the padding value to <code>1em</code> for the top, <code>10px</code> for the right and <code>0</code> for the bottom and left. For the margin property we need to add the values of <code>5px</code> to the top, <code>5px</code> for the right and <code>0</code> for the bottom and left.</p>
+                <p>Time to mess around with the icons we added. We can style both at once using the <code>.fa</code> class selector. Increase the font-size value to <code>20px</code> to increase the size of the icons, they are considered font and we can increase the size that easy.</p>
+                <p>Also add the <code>opactiy: ;</code> property to the .fa selector and give it a value of <code>0.7</code> - add the cursor property with a value of <code>default</code>and the last property we will adjust will be <code>vertical-align: ;</code>, we need to set the value to <code>top</code> - so the icons will align correctly. </p>
+                <p>Lets change what happens when a user hovers over these icons, using the pseudo class <code>:hover</code> add the <code>opacity: ;</code> property and set the vaule to <code>1.0</code> making it 100% visible as opposed to 70% when the user is not hovering on one of the icons.</p>
+                <p>A few more to go and your <code>top_nav</code> will look like googles! top navigation The next select we will need is the span element that has the ID of share (your fifth &lt;li&gt; hopefully). Set the <code>cursor: ;</code> property to have a value of <code>default</code>, Give it a property of <code>background-color: ;</code> and a value of <code>#f2f2f2</code>, a nice lightgrey that matches googles.</p> 
+                <p>We need a little padding to increase the size of the background behind the span, call the <code>padding</code> property and set the value to <code>7px</code> for the top and bottom, and <code>15px</code> for the left and right. (without it would look something like this <span class="share_button_no_padding">Share</span>, not really resembling a button here.</p>
+                <p>Lets change what happens when a user hovers over this span, using the pseudo class <code>:hover</code> again this time on the <code>span#share</code> selector. We want to change the <code>background-color</code> property to a color of <code>#E1E1E1</code> - a darker color so a user will know they are hovered over it.</p>
+                <p>Final selector for the navigation!!! Call the HTML <code>img</code> element selector that has the class of <code>profile_img</code>. First adjust the <code>width: ;</code> & <code>height: ;</code> of the image, add the value of <code>32px</code> to each property. Add the <code>border-radius</code> property and set it to have a value of <code>25px</code> - changing your picture to a nice circle. Last we need to adjust the <code>margin</code> for the picture since its off a little bit, give it a value of <code>-5px</code> and it should fall in line.</p>
+            </div>
+            <div class="col-md-8 col-md-offset-2">
+                <div class="panel-group" id="accordion3">
+                  <div class="panel panel-success">
+                    <div class="panel-heading">
+                      <h4 class="panel-title text-center">
+                        <a data-toggle="collapse" data-parent="#accordion3" href="#collapseThree">
+                          Click here to see what my index.html page looks like in browser after Step: 2
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapseThree" class="panel-collapse collapse">
+                      <div class="panel-body">
+                        <img src="img/product.nav.jpg" style="display:block; margin: auto auto; border: 5px solid #151515;">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-md-offset-3">
+                <div class="panel-group" id="accordion5">
+                  <div class="panel panel-info">
+                    <div class="panel-heading">
+                      <h4 class="panel-title text-center">
+                        <a data-toggle="collapse" data-parent="#accordion5" href="#collapseFive">
+                          Click here to see what my CSS looks like after Step: 2
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapseFive" class="panel-collapse collapse">
+                      <div class="panel-body">
+                        <pre class="codyprint">
+<span class="red">ul</span><span class="green">#nav</span> {
+    <span class="blue">float</span>: <span class="blue">right</span>;
+    <span class="blue">margin-right</span><span class="white">:</span><span class="purple">25</span><span class="red">px</span>;
+}
+<span class="red">ul</span><span class="green">#nav</span> <span class="red">li</span> {
+    <span class="blue">list-style</span>: <span class="blue">none</span>;
+    <span class="blue">display</span>: <span class="blue">inline-block</span>;
+    <span class="blue">text-align</span>: <span class="blue">right</span>;
+    <span class="blue">padding</span>: <span class="purple">1</span><span class="red">em</span> <span class="purple">10</span><span class="red">px</span> <span class="purple">0 0</span>;
+    <span class="blue">vertical-align</span>: <span class="blue">bottom</span>;
+    <span class="blue">margin</span>: <span class="purple">5</span><span class="red">px</span> <span class="purple">5</span><span class="red">px</span> <span class="purple">0 0</span>;
+    <span class="blue">font-size</span>: <span class="purple">13</span><span class="red">px</span>;
+}
+<span class="green">.fa</span> {
+    <span class="blue">font-size</span>: <span class="purple">20</span><span class="red">px</span>;
+    <span class="blue">vertical-align</span>: <span class="blue">top</span>;
+    <span class="blue">opacity</span>: <span class="purple">0.7</span>;
+    <span class="blue">cursor</span>: <span class="blue">default</span>;
+}
+<span class="green">.fa:hover</span> {
+    <span class="blue">opacity</span>: <span class="purple">1.0</span>;
+}
+<span class="red">span</span><span class="green">#share</span> {
+    <span class="blue">background-color</span>: <span class="purple">#f2f2f2</span>;
+    <span class="blue">padding</span>:<span class="purple">7</span><span class="red">px</span> <span class="purple">15</span><span class="red">px</span>;
+    <span class="blue">cursor</span>: <span class="blue">default</span>;
+}
+<span class="red">span</span><span class="green">#share:hover</span> {
+    <span class="blue">background-color</span>: <span class="purple">#E1E1E1</span>;
+}
+<span class="red">img</span><span class="green">.profile_img</span> {
+    <span class="blue">border-radius</span>: <span class="purple">25</span><span class="red">px</span>;
+    <span class="blue">height</span>: <span class="purple">32</span><span class="red">px</span>;
+    <span class="blue">margin</span>: <span class="purple">-5</span><span class="red">px</span>;
+    <span class="blue">width</span>: <span class="purple">32</span><span class="red">px</span>;
+}
+                    </pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+            <div class="col-md-8 col-md-offset-2">
+                <!-- step 3 building the Search Container-->
+                <h2>Step 3: Building the middle search container</h2>
+                <p>So we have the top navigation looking nice, lets move onto the middle section of the Google home page.</p>
+                <div class="panel-group" id="accordion6">
+                  <div class="panel panel-danger">
+                    <div class="panel-heading">
+                      <h4 class="panel-title text-center">
+                        <a data-toggle="collapse" data-parent="#accordion6" href="#collapseSix">
+                          Here's the section we will build next - the middle search container
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapseSix" class="panel-collapse collapse in">
+                      <div class="panel-body">
+                        <img src="img/product.search.jpg" style="display:block; margin: 0 auto; border: 5px solid #151515; border-radius: 25px;">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <p>Back to index.html we go, first add a <code>div</code> below the closing unordered list with a ID of top_nav, you will want to add a ID to this new div and set it equal to <code>search</code>.</p>
+                <p>Inside your new <code>div</code> you want to add 3 HTML elements, the 1st being an <code>img</code> tag, the second an <code>input</code> tag and finally a <code>ul</code> tag that has 2 <code>li</code> tags inside the unordered list.</p>
+                <p>Time to add some attributes, to your &lt;img&gt; tag set the src attribute to the image called <code>google.png</code> located in the img folder. Add the autofocus attribute to the <code>input</code> tag, also add the class of <code>search_buttons</code>, we will style this in a minute.</p>
+                <p>Last add the class attribute to the unordered list and set it to <code>buttons</code>.  Add the text of "Google Search" to the 1st &lt;li&gt; & the text of "I'm Feeling Lucky" to the 2nd &lt;li&gt;.</p>
+                <div class="panel-group" id="accordion7">
+                  <div class="panel panel-info">
+                    <div class="panel-heading">
+                      <h4 class="panel-title text-center">
+                        <a data-toggle="collapse" data-parent="#accordion7" href="#collapseSeven">
+                          Check out my index.html page after Step: 3
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapseSeven" class="panel-collapse collapse">
+                      <div class="panel-body">
+                        <pre class="prettyprint">
+&lt;ul id="top_nav"&gt;
+    &lt;li&gt;&lt;a href="https://plus.google.com/u/0/"&gt;+Chris&lt;/a&gt;&lt;li&gt;
+    &lt;li&gt;&lt;a href="https://mail.google.com/mail/?tab=wm"&gt;Mail&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="https://www.google.com/imghp?hl=en&tab=wi&ei=QwodVJqzMYaqyASD9YDABA&ved=0CAQQqi4oAg"&gt;Images&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;div class="fa fa-th">&lt;/div&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;div class="fa fa-bell-o">&lt;/div&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span id="share">Share&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;img src="img/chris3.jpg"&gt;&lt;/li&gt;
+&lt;/ul&gt;    
+
+&lt;div id="search"&gt;
+    &lt;img src="img/google.png"&gt;
+    &lt;input class="search_buttons" autofocus&gt;
+    &lt;ul class="buttons"&gt;
+        &lt;li&gt;Google Search&lt;/li&gt;
+        &lt;li&gt;I'm Feeling Lucky&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;                             
+                        </pre>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+
+            <div class="col-md-8 col-md-offset-2">
+                <h2>Step 4: Add CSS to the middle section</h2>
+                <p>Back to your <code>main.css</code> page so we can style the image, input and unordered list.</p>
+                <p>Below the last CSS selector we called <code>img.profile_img</code> you want to start by calling another CSS selector, let style the overall <code>div</code> that has the ID of <code>search</code>. For this selector we will add 3 properties, 1st the <code>position: ;</code>, make this value equal to <code>absolute</code>. The 2nd is the <code>margin-top: ;</code> property, add the value of <code>50px</code> to this one. The 3rd property is <code>width</code> and you want to set this to <code>100%</code>.</p>
+                <p>Great, now we will style the <code>img</code> elements that are found in your <code>div#search</code> tag. The 1st property we want is the <code>display: ;</code> set this value to <code>block</code>, this out the display set to block we can't set your to have a margin of auto on the left and right.</p>
+                <p>We can do this now, call the <code>margin: ;</code> property and set the values to <code>0</code> for the top and bottom & <code>auto</code> for the left and right (display:block; + margin: 0 auto; will center any image). Last call the <code>padding: ;</code> property set the top value to <code>142px</code>, the bottom value to <code>24px</code> and <code>0</code> to the right and left.</p>
+                <p>Now to the next one. Lets style any <code>input</code> that has a class of <code>search_buttons</code> - 1st increase the size of font the appears in this input give it a value of <code>17px</code> to match googles. Next set the <code>width: ;</code> property equal to <code>40%</code>, and add a <code>margin-left: ;</code> with a value of <code>30%</code> - effectively centering the input!. Last add a <code>border: ;</code> property and set it to <code>1px</code> with a <code>solid</code> border and the color of the border to <code>#d9d9d9</code>.</p>
+                <p>Now you can use the pseudo class <code>:focus</code> to change the <code>border-color</code> the the input to have a value of <code>#4387fd</code>. Lets move onto the unordered list that have a class of <code>buttons</code> attached to it. You will just want to center the text for these and add a <code>padding-left: ;</code> property with a value of <code>0</code>.</p>
+                <p>Weeee, Now we can still the &lt;li&gt; we are using as the fake buttons! Use the same CSS selectors as the last one but this time we want to find every <code>li</code> that happens to be inside any <code>ul</code> with a class of <code>buttons</code>. Set the <code>display: ;</code> property value equal to <code>inline-block</code> since we want these two buttons next to each other.</p>
+                <p>Next add a <code>background-color: ;</code> and give it a value of <code>#F5F5F5</code>, Add the <code>border</code> property with a <code>1px</code> <code>solid</code> line and the <code>rgba</code> color of black with a <code>0.1</code> alpha rating, so its almost invisible.</p>
+                <p>On to the <code>border-radius: ;</code> property, give a  value of <code>2px</code> for this one, just slightly rounding the corners. Adjust the <code>color: ;</code> to have the value of <code>#666</code>, a <code>font-size: ;</code> value of <code>11px</code> and the <code>font-weight: ;</code> property value equal to <code>bold</code>.</p>
+                <p>A few more and we are done with the buttons, you need to add a <code>line-height: ;</code> property and give it the value of <code>27px</code>, add a <code>margin: ;</code> of <code>17px</code> for the top and bottom & <code>6px</code> for the left and right. Last the <code>padding: ;</code> set the values to <code>0</code> for the top and bottom & <code>12px</code> for the left and right.</p>
+                <p>The last CSS selector we will call is identical to the previous selector + the pseudo selector <code>:hover</code>, this will affect what happens when a user hovers over the list items in the unordered list that has a class of buttons attached to it, for this one we will add a <code>background-color: ;</code> and give it the vaule of <code>#F8F8F8</code>.</p>
+                <p>Also you need a <code>border: ;</code> with the values set to <code>1px</code> for the width, <code>solid</code> for the border style and <code>#C6C6C6</code> for the border color. Add the <code>color: ;</code> property and give it a value of <code>#333</code>.</p>
+                <p>For the last bit of magic set the <code>cursor: ;</code> property to equal <code>default</code>, and now for a CSS3 property <code>box-shadow: ;</code> you want to set the values to <code>0</code> offset to the left, <code>1px</code> offset from the top, <code>1px</code> for the blur and the color will be rgba again set to black with a <code>0.1</code> opacity.</p>
+            </div>
+            <div class="col-md-10 col-md-offset-1">
+                <div class="panel-group" id="accordion8">
+                  <div class="panel panel-success">
+                    <div class="panel-heading">
+                      <h4 class="panel-title text-center">
+                        <a data-toggle="collapse" data-parent="#accordion8" href="#collapseEight">
+                          Here is what my index.html page looks like in browser after Step: 4
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapseEight" class="panel-collapse collapse in">
+                      <div class="panel-body">
+                        <img src="img/step4.jpg" style="display:block; margin: auto auto; border: 5px solid #151515;">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-md-offset-3">
+                <div class="panel-group" id="accordion9">
+                  <div class="panel panel-info">
+                    <div class="panel-heading">
+                      <h4 class="panel-title text-center">
+                        <a data-toggle="collapse" data-parent="#accordion9" href="#collapseNine">
+                          Click here to see how my CSS looks like from Step: 4
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapseNine" class="panel-collapse collapse">
+                      <div class="panel-body">
+                        <pre class="codyprint">
+<span class="red">div</span><span class="green">#search</span> {
+    <span class="blue">position</span>: <span class="blue">absolute</span>;
+    <span class="blue">margin-top</span><span class="white">:</span><span class="purple">50</span><span class="red">px</span>;
+    <span class="blue">width</span><span class="white">:</span><span class="purple">100</span><span class="red">%</span>;
+}
+<span class="red">div</span><span class="green">#search</span> <span class="red">img</span> {
+    <span class="blue">display</span>: <span class="blue">block</span>;
+    <span class="blue">margin</span>: <span class="purple">0</span> <span class="blue">auto</span>;
+    <span class="blue">padding</span>: <span class="purple">142</span><span class="red">px</span> <span class="purple">0</span> <span class="purple">24</span><span class="red">px</span> <span class="purple">0</span>;
+}
+<span class="red">input</span><span class="green">.search_buttons</span> {
+    <span class="blue">width</span>: <span class="purple">40</span><span class="red">%</span>;
+    <span class="blue">margin-left</span><span class="white">:</span><span class="purple">30</span><span class="red">%</span>;
+    <span class="blue">font-size</span><span class="white">:</span><span class="purple">17</span><span class="red">px</span>;
+    <span class="blue">border</span>: <span class="purple">1</span><span class="red">px</span> <span class="blue">solid</span> <span class="purple">#D9D9D9</span>;
+}
+<span class="red">input</span><span class="green">.search_buttons:focus</span> {
+    <span class="blue">border-color</span>: <span class="purple">#4387FD</span>;
+}
+<span class="red">ul</span><span class="green">.buttons</span> {
+    <span class="blue">text-align</span>: <span class="blue">center</span>;
+    <span class="blue">padding-left</span>: <span class="purple">0</span>;
+}
+<span class="red">ul</span><span class="green">.buttons</span> <span class="red">li</span> {
+    <span class="blue">background-color</span>: <span class="purple">#F5F5F5</span>;
+    <span class="blue">border</span>: <span class="purple">1</span><span class="red">px</span> <span class="blue">solid</span> <span class="blue">rgba</span>(<span class="purple">0, 0, 0, 0.1</span>);
+    <span class="blue">border-radius</span><span class="white">:</span><span class="purple">2</span><span class="red">px</span>;
+    <span class="blue">color</span>: <span class="purple">#666</span>;
+    <span class="blue">font-size</span><span class="white">:</span><span class="purple">11</span><span class="red">px</span>;
+    <span class="blue">font-weight</span>: <span class="blue">bold</span>;
+    <span class="blue">line-height</span>: <span class="purple">27</span><span class="red">px</span>;
+    <span class="blue">margin</span>: <span class="purple">17</span><span class="red">px</span> <span class="purple">6</span><span class="red">px</span>;
+    <span class="blue">padding</span>: <span class="purple">0</span> <span class="purple">12</span><span class="red">px</span>;
+    <span class="blue">display</span>: <span class="blue">inline-block</span>;
+}
+<span class="red">ul</span><span class="green">.buttons</span> <span class="red">li</span><span class="green">:hover</span> {
+    <span class="blue">background-color</span>: <span class="purple">#F8F8F8</span>;
+    <span class="blue">border</span>: <span class="purple">1</span><span class="red">px</span> <span class="blue">solid</span> <span class="purple">#C6C6C6</span>;
+    <span class="blue">box-shadow</span>: <span class="purple">0</span> <span class="purple">1</span><span class="red">px</span> <span class="purple">1</span><span class="red">px</span> <span class="blue">rgba</span>(<span class="purple">0, 0, 0, 0.1</span>);
+    <span class="blue">color</span>: <span class="purple">#333</span>;
+    <span class="blue">cursoe</span>: <span class="blue">default</span>;
+}
+                    </pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+            <div class="col-md-8 col-md-offset-2">
+                <h2>Step 5: Google's Bottom Navigation in HTML</h2>
+                <p>So far you have completed emulating through two-thirds of Google homepage. The final section will be the bottom navigation - links to privacy policy and what not.</p>
+                <div class="panel-group" id="accordion10">
+                  <div class="panel panel-danger">
+                    <div class="panel-heading">
+                      <h4 class="panel-title text-center">
+                        <a data-toggle="collapse" data-parent="#accordion10" href="#collapseTen">
+                          Here is a basic image of Google's bottom navigation
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapseTen" class="panel-collapse collapse in">
+                      <div class="panel-body">
+                        <img src="img/bottom.jpg" style="display:block; margin: 0 auto;">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <p>So back to your <code>index.html</code> below you <span class="green">#search</span> div, you will want to startt with another <code>div</code> tag, this time give it an ID of <code>bottom_nav</code>. Inside you will need to add two unordered lists, the 1st with 3 list items with an anchor tag inside each and the 2nd needs 2 list items with an anchor tag inside each.</p>
+                <p>Give the 1st <code>ul</code> a class attribute equal to <code>left</code> - this will serve as the bottom left nav - and a class attribute equal to <code>right</code> for the 2nd <code>ul</code> - serving as the bottom right nav. We will style that in am minute.</p>
+                <p>Inside each anchor tag we want to add the matching words that Google's homepage has, so the 1st should be "Advertising", the 2nd should be "Business", the 3rd "About", inside the <code>ul#left</code> element.</p>
+                <p>Inside the <code>ul#right</code>, add the text of "Privacy & Terms" to the 1st anchor element and the text of "Settings" to the second anchor tag.</p>
+                <p>Almost done with HTML for now...time to get the links associated with correlating anchor text, so return to <a href="google.com" target="_blank">google.com</a> and make sure your still logged-in. Starting at the bottom left click on "Advertising" and copy the url into the <code>href=""</code>, and return to google. It should look something like this <code>https://www.google.com/intl/en/ads/?fg=1</code>.</p>
+                <p>On to "Businees", again just copy the URL and return to the home page. Paste the link into the second <code>href=""</code>, it should look something like this <code class="wrapping">http://www.google.com/services/businesssolutions/?utm_exp<wbr>id=84765423-8.7L_zBEl7TBKKnK0klCweGw.1&fg=1&utm_referrer=https%3A%2F%2Fwww.google.com%2F%3Fgws_rd%3Dssl</code>. Next is the "About" anchor the href should look something like this <code>https://www.google.com/intl/en/about/</code>.</p>
+                <p>The last two, go to the privacy & poliacy and copy the URL into the 4th <code>href=""</code>, it should look like this <code>https://www.google.com/intl/en/policies/?fg=1</code>. And last but not least, Google's settings bottom right of the Google home page - copy this link into the 5th and final <code>href=""</code> attribute, and it should look like this <code>https://www.google.com/preferences?hl=en</code> more or less.</p>
+                <div class="panel-group" id="accordion11">
+                  <div class="panel panel-info">
+                    <div class="panel-heading">
+                      <h4 class="panel-title text-center">
+                        <a data-toggle="collapse" data-parent="#accordion11" href="#collapseEleven">
+                          Check out my index.html page after Step: 5
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapseEleven" class="panel-collapse collapse">
+                      <div class="panel-body">
+                        <pre class="prettyprint">
+&lt;ul id="top_nav"&gt;
+    &lt;li&gt;&lt;a href="https://plus.google.com/u/0/"&gt;+Chris&lt;/a&gt;&lt;li&gt;
+    &lt;li&gt;&lt;a href="https://mail.google.com/mail/?tab=wm"&gt;Mail&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="https://www.google.com/imghp?hl=en&tab=wi&ei=QwodVJqzMYaqyASD9YDABA&ved=0CAQQqi4oAg"&gt;Images&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;div class="fa fa-th">&lt;/div&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;div class="fa fa-bell-o">&lt;/div&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span id="share">Share&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;img src="img/chris3.jpg"&gt;&lt;/li&gt;
+&lt;/ul&gt;    
+
+&lt;div id="search"&gt;
+    &lt;img src="img/google.png"&gt;
+    &lt;input class="search_buttons" autofocus&gt;
+    &lt;ul class="buttons"&gt;
+        &lt;li&gt;Google Search&lt;/li&gt;
+        &lt;li&gt;I'm Feeling Lucky&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;   
+
+&lt;div id="bottom_nav"&gt;
+    &lt;ul id="left"&gt;
+        &lt;li&gt;&lt;a href="https://www.google.com/intl/en/ads/?fg=1"&gt;Advertising&lt;/a&gt;&lt;li&gt;
+        &lt;li&gt;&lt;a href="http://www.google.com/services/businesssolutions/?utm_expid=84765423-8.7L_zBEl7TBKKnK0klCweGw.1&fg=1&utm_referrer=https%3A%2F%2Fwww.google.com%2F%3Fgws_rd%3Dssl"&gt;Business&lt;/a&gt;&lt;li&gt;
+        &lt;li&gt;&lt;a href="https://www.google.com/intl/en/about/"&gt;About&lt;/a&gt;&lt;li&gt;
+    &lt;/ul&gt;
+    &lt;ul id="right"&gt;
+        &lt;li&gt;&lt;a href="https://www.google.com/intl/en/policies/?fg=1"&gt;Privacy & Terms&lt;/a&gt;&lt;li&gt;
+        &lt;li&gt;&lt;a href="https://www.google.com/preferences?hl=en"&gt;Settings&lt;/a&gt;&lt;li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;                            
+                        </pre>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+
+            <div class="col-md-8 col-md-offset-2">
+                <h2>Step 6: Add CSS to the bottom navigation section</h2>
+                <p>Now that we finished the HTML portion, lets add some properties to some more elements to finish what we started!!! Back to <code>main.css</code> to finish out the project.</p>
+                <p>First things first, we want to style the div with a ID of <code>bottom_nav</code> attached to it. We want this div to be attached to the bottom permanently, to do this we need to set the <code>position: ;</code> property to <code>absolute</code>, then set the <code>bottom</code> css property to <code>0 !important</code>.</p>
+                <p>Now the div will be attached to the bottom of the browser screen! A few more to add to this one - 1st set the width property to <code>100%</code>. 2nd add a background-color property and set the value to <code>#F2F2F2</code>, and 3rd add the border-top property and set it to equal <code>1px</code> for the width, <code>solid</code> for the style, and <code>#E4E4E4</code> for the border color.</p>
+                <p>Moving on to the next selector - you need to call the unordered list with a ID of <code>left</code>, set the float property equal to <code>left</code>, the margin-bottom property equal to <code>0</code> and a padding-left property of <code>20px</code>.</p>
+                <p>Next lets style the unordered list with a ID of <code>#right</code>, as you can imagine we want to float this to the <code>right</code>, as before we need to add a margin-bottom property and set he value equal to <code>0</code> and last a <code>padding-left: ;</code> property equal to <code>10px</code>.</p>
+                <p>Time to style all the list items found in both <code>ul#right</code> and <code>ul#left</code> - for this selector you want to set the display property to <code>inline</code>, add a <code>line-height: ;</code> and set the value to <code>40px</code> and last remove the list-style but setting this property to <code>none</code>.</p>
+                <p>Trucking right along, we want to select every <code>a</code> tag inside each List Item found inside both unordered lists of <code>#left</code>, & <code>#right</code>, first add the color property ad set the value to <code>#666</code>. Second reduce the <code>letter-spacing: ;</code> to a value of <code>0.1</code>. Third adjust the font-size to <code>13px</code>, and 4th add a <code>margin: ;</code> of <code>2px</code> for the top, <code>10px</code> for the left & right, and <code>0</code> for the bottom.</p>
+                <p>We are down to the last two selectors, and the most complicated so get ready...We want to select the unordered list with the ID of right, we want to find all list items inside this, then the anchors inside the li's and finally the <code>:first-child</code> selector added to the anchor tag.  To this selector we want to add the <code>padding-right: ;</code> property and set the value to 8px.</p>
+                <p>For the last selector you will want to call and unordered list with the ID of <code>#left</code>, then every list item inside and then use the <code>:nth-child()</code> pseudo selector on the list item and pass a value of <code>2</code> into it, use a comma so you can add a second selector to this call. Just copy the 1st line with out the comma and pass a value of <code>3</code> into it.</p>
+
+            </div>
+            <div class="col-md-6 col-md-offset-3">
+                <div class="panel-group" id="accordion12">
+                  <div class="panel panel-info">
+                    <div class="panel-heading">
+                      <h4 class="panel-title text-center">
+                        <a data-toggle="collapse" data-parent="#accordion12" href="#collapseTwelve">
+                          Check out how my CSS is looking from Step: 6
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapseTwelve" class="panel-collapse collapse">
+                      <div class="panel-body">
+                        <pre class="codyprint">
+<span class="red">div</span><span class="green">#bottom_nav</span> {
+    <span class="blue">position</span>: <span class="blue">absolute</span>;
+    <span class="blue">bottom</span><span class="white">:</span><span class="purple">0</span> <span class="red">!important</span>;
+    <span class="blue">width</span><span class="white">:</span><span class="purple">100</span><span class="red">%</span>;
+    <span class="blue">background-color</span>: <span class="purple">#F2F2F2</span>;
+    <span class="blue">borde-topr</span>: <span class="purple">1</span><span class="red">px</span> <span class="blue">solid</span> <span class="purple">#E4E4E4</span>;
+}
+<span class="red">ul</span><span class="green">#left</span> {
+    <span class="blue">float</span>: <span class="blue">left</span>;
+    <span class="blue">padding-left</span>: <span class="purple">20</span><span class="red">px</span>;
+    <span class="blue">margin-bottom</span>: <span class="purple">0</span>;
+}
+<span class="red">ul</span><span class="green">#right</span> {
+    <span class="blue">float</span>: <span class="blue">right</span>;
+    <span class="blue">padding-right</span>: <span class="purple">10</span><span class="red">px</span>;
+    <span class="blue">margin-bottom</span>: <span class="purple">0</span>;
+}
+<span class="red">ul</span><span class="green">#left</span> <span class="red">li</span>,
+<span class="red">ul</span><span class="green">#right</span> <span class="red">li</span> {
+    <span class="blue">list-style</span>: <span class="blue">none</span>;
+    <span class="blue">display</span>: <span class="blue">inline</span>;
+    <span class="blue">line-height</span><span class="white">:</span><span class="purple">40</span><span class="red">px</span>;
+}
+<span class="red">ul</span><span class="green">#left</span> <span class="red">li</span> <span class="red">a</span>,
+<span class="red">ul</span><span class="green">#right</span> <span class="red">li</span> <span class="red">a</span> {
+    <span class="blue">color</span>: <span class="purple">#666</span>;
+    <span class="blue">margin</span>: <span class="purple">2</span><span class="red">px</span> <span class="purple">10</span><span class="red">px</span> <span class="purple">0</span>;
+}
+<span class="red">ul</span><span class="green">#right</span> <span class="red">li</span> <span class="red">a</span><span class="green">:first-child</span> {
+    <span class="blue">padding-right</span>: <span class="purple">8</span><span class="red">px</span>;
+}
+<span class="red">ul</span><span class="green">#left</span> <span class="red">li</span><span class="green">:nth-child</span>(<span class="purple">2</span>),
+<span class="red">ul</span><span class="green">#left</span> <span class="red">li</span><span class="green">:nth-child</span>(<span class="purple">3</span>) {
+    <span class="blue">margin-left</span>: <span class="purple">7</span><span class="red">px</span>;
+}
+                    </pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+            <div class="col-md-8 col-md-offset-2">
+                <h2 class="text-center">Lets it for the replication - save and refresh in browser - and go on to trick some people with it!</h2>
+                <h4 class="text-center alert alert-info"><a href="http://codifyacademy.com/google_demo" target="_blank">Here is My Google home page replication you can compare yours too.</a></h4>
+            </div>
+        </div> <!-- /container -->
+
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <!-- Bootstrap Javascript -->
+        <script type="text/javascript" src="js/vendor/bootstrap.min.js"></script>
+        <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+        <!-- Our Added JS -->
+        <script type="text/javascript" src="js/main.js"></script>
+    </body>
+</html>

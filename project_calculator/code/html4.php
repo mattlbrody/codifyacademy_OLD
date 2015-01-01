@@ -1,0 +1,26 @@
+&lt;div id="calculator"&gt;
+  &lt;div id="top"&gt;
+	&lt;span class="clear"&gt;C&lt;/span&gt;
+	&lt;div class="screen"&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div id="keys"&gt;
+	&lt;span&gt;7&lt;/span&gt;
+	&lt;span&gt;8&lt;/span&gt;
+	&lt;span&gt;9&lt;/span&gt;
+	&lt;span class="operator"&gt;+&lt;/span&gt;
+	&lt;span&gt;4&lt;/span&gt;
+	&lt;span&gt;5&lt;/span&gt;
+	&lt;span&gt;6&lt;/span&gt;
+	&lt;span class="operator"&gt;-&lt;/span&gt;
+	&lt;span&gt;1&lt;/span&gt;
+	&lt;span&gt;2&lt;/span&gt;
+	&lt;span&gt;3&lt;/span&gt;
+	&lt;span class="operator"&gt;x&lt;/span&gt;
+	&lt;span&gt;0&lt;/span&gt;
+	&lt;span&gt;.&lt;/span&gt;
+	&lt;span&gt;9&lt;/span&gt;
+	&lt;span class="eval"&gt;=&lt;/span&gt;
+	&lt;span class="operator"&gt;÷&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;

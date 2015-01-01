@@ -1,0 +1,3 @@
+.keys, .top {
+  overflow: hidden;
+}

@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>HTML 101 | Codify Academy</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="css/main.css">
+
+        <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    </head>
+    <body>
+      <!--[if lt IE 7]>
+          <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+      <![endif]-->
+      <div class="navbar-header navbar-default">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      
+      <section class="container">
+        <!-- Nav tabs -->
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="col-md-2 list-unstyled sidebar" role="tablist">
+            <li class="active"><a href="#intro" role="tab" data-toggle="tab" onClick="scroll(0,0);">Introduction</a></li>
+            <li><a href="#tools_needed" role="tab" data-toggle="tab" onClick="scroll(0,0);">What You Need</a></li>
+            <li><a href="#workspace" role="tab" data-toggle="tab" onClick="scroll(0,0);">Set Up a Workspace</a></li>
+            <li><a href="#HTML_tags" role="tab" data-toggle="tab" onClick="scroll(0,0);">HTML Tags Explained</a></li>
+            <li><a href="#HTML_attributes" role="tab" data-toggle="tab" onClick="scroll(0,0);">HTML Attributes Explained</a></li>
+            <li><a href="#starting_HTML" role="tab" data-toggle="tab" onClick="scroll(0,0);">Starting an HTML Document</a></li>
+            <li><a href="#preview_work" role="tab" data-toggle="tab" onClick="scroll(0,0);">Previewing Your Work</a></li>
+            <li><a href="#headings" role="tab" data-toggle="tab" onClick="scroll(0,0);">Headings</a></li>
+            <li><a href="#working_text" role="tab" data-toggle="tab" onClick="scroll(0,0);">Working With Text</a></li>
+            <li><a href="#links" role="tab" data-toggle="tab" onClick="scroll(0,0);">Creating Links</a></li>
+            <li><a href="#horizontal_rule" role="tab" data-toggle="tab" onClick="scroll(0,0);">Horizontal Rule</a></li>
+            <li><a href="#inserting_images" role="tab" data-toggle="tab" onClick="scroll(0,0);">Inserting Images</a></li>
+            <li><a href="#lists" role="tab" data-toggle="tab" onClick="scroll(0,0);">Lists</a></li>
+            <li><a href="#tables" role="tab" data-toggle="tab" onClick="scroll(0,0);">Working With Tables</a></li>
+            <li><a href="#semantic" role="tab" data-toggle="tab" onClick="scroll(0,0);">Being Semantic</a></li>
+          </ul>
+        </div>
+
+
+        <!-- Tab panes -->
+        <div class="col-md-9">
+          <div class="tab-content">
+
+            <!-- Introduction -->
+            <div class="tab-pane active" id="intro">
+              <h1>HTML 101 - Introduction</h1>
+              <img src="img/2048.jpg" width="100%" class="img-responsive">    
+              <p>Hyper Text Markup Language (HTML) is the lingua franca of the Web – a simple document syntax in which all of the web's 63 billion pages are written.</p>
+              <p>HTML is not a programming language per se', but a markup language – a way of marking up plain text documents so that Web browsers know which parts of a page are paragraphs, which parts are bold or italic, which parts are tables, etc.</p>
+              <p>Even if a web site is driven by a complicated database-backed content management system, it still must return simple HTML (and media files) to the end user's web browser for display. Thus, it's valuable to know some HTML even if your day job involves working with a content management system – knowing HTML will help you do more within the constraints of your system, and will help you fix things that are broken.</p>
+              <p>Don't be intimidated – it's simple to learn basic HTML, and you can pick it up as you go, building up your skills to eventually include more advanced formatting and styling with Cascading Style Sheets. </p>
+            </div>
+
+            <!-- What You Need -->
+            <div class="tab-pane" id="tools_needed">
+              <h1>What You Need</h1>
+              <p>All you need to get started is a plain text editor and a web browser (such as Firefox, Safari, or Internet Explorer). For learning purposes, you can work directly from your desktop, without access to a web server (though we'll cover uploading to a web server in a separate tutorial).</p>
+              <p>HTML is plain text. Therefore, you need to start with a basic text editor, such as Notepad for Windows or TextEdit for the Mac, both of which come with their respective operating systems. </p>
+              <img src="img/2048.jpg" alt="#" width="100%" class="img-responsive">  
+              <p>However, you'll find that you can work much more cleanly and efficiently with an advanced text editor (also called a "programmer's editor"), such as :</p>
+              <ul>
+                <li><a href="https://sublimetext.com/3">Sublime Text 3</a> Our Favorite!</li>
+              </ul>
+              <p>High-quality text editors make the HTML editing process much easier by providing a wealth of shortcuts that prevent you from having to write every scrap of code manually.</p>
+              <p>When shopping for other text editors, be sure to get one that supports "syntax highlighting," which renders your HTML tags in a different color – this makes the editing process much easier. A good text editor will also greatly help with proper code indentation, which will make your code more readable.</p>
+              <p>Do not use a word processing application such as Microsoft Word to edit plain text files – word processors work on binary documents, not text. Yes, you could take care to "Save as Plain Text" from your word processor, but we feel you'll be better served with a dedicated text editor than a word processor. Whatever you do, never use Word's "Save as HTML" feature – it'll create a rat's nest of tag soup you'll never be able to edit manually.</p>
+            </div>
+
+            <!-- Set Up a Workspace -->
+            <div class="tab-pane" id="workspace">
+              <h1>Set Up a Workspace</h1>
+              <p>When you create a document in a word processor, you can embed media such as images or movies directly into it. No matter how much you embed, you still end up with a single document. But that's not now HTML works. An HTML document is plain text, and that's it. If you want images or other media to show up on your site, you'll need to put them on the same server (or in the same folder, for our purposes) and reference the external media from the HTML.</p>
+              <p>Therefore, it's important to make sure all your HTML documents and media files live together under a single folder (or in sub-folders of a parent "site" folder). It's also a good idea to create a parallel "source" folder for files and documents you use to create your site, but that aren't actually part of the site (for example, uncompressed images and video, Word documents, etc.) Before you begin, please take time to create a "site" folder on your desktop, into which you'll place all of the files that make up your page or site.</p>
+              <hr>
+              <div class="col-md-4">
+                <img src="img/workspace.png" alt="file folder tree" width="100%" class="img-responsive">
+              </div>
+              <div class="col-md-8">
+                <p>Before getting to work, set up a logical structure for your site, as well as a place to keep original source materials related to the site. Don't put non-web-ready media (such as uncompressed video, Word docs, etc.) into your site folder!</p>
+              </div>
+              <div class="clearfix"></div>
+            </div>
+
+            <!-- HTML Tags Explained -->
+            <div class="tab-pane" id="HTML_tags">
+              <h1>HTML Tags Explained</h1>
+              <p> HTML "tags" are bits of code that surround plain text. Tags give the Web browser instructions on how to display elements of a Web page, whether it's text, pictures, video clips, or hyperlinks to other Web pages.</p>
+              <p>Tags are always surrounded by a set of angle brackets: </p>
+              <pre class="prettyprint">
+&lt;a&gt; | &lt;p&gt; | &lt;img&gt; | &lt;h1&gt;
+              </pre>
+              <p>Most tags function as "containers" that wrap around an "element" on a page. For example:</p>
+              <pre class="prettyprint">
+&lt;p&gt;
+    My &lt;strong&gt;hovercraft&lt;/strong&gt; is full of eels.
+&lt;/p&gt;
+              </pre>
+              <p> Note: In this tutorial, tags and code samples will be shown with line numbers at the left margin. These are just present so we can refer to line numbers during instruction - they are not meant to be typed into your own code.</p>
+              <p>In this example, the whole sentence is wrapped in paragraph (&lt;p&gt;) "container" tags, and the word "hovercraft" is wrapped in the "strong" (bold) "container" tags. In other words, you're simply turning certain "rendering modes" on and off. Here's an equivalent example in plain English:</p>
+              <p>[start the paragraph] My [turn bold text on] hovercraft [turn bold text off] is full of eels. [end the paragraph]</p>
+              <p>There are tons of <a href="https://www.w3schools.com" target="_blank">HTML tags</a> available, but you'll find yourself using only a dozen or so over and over again – most HTML tags are for somewhat obscure purposes.</p>
+              <p>Note that tags end with another copy of the same tag, but this time including a forward slash: </p>
+              <pre class="prettyprint panel-success">
+&lt;/a&gt; | &lt;/p&gt; | &lt;/img&gt; | &lt;/h1&gt;
+              </pre>
+              <P>In a very few cases, tags are not containers, and don't "surround" anything. For example, the HTML to insert an image in a page is not a container – it doesn't "wrap around" anything. In those cases, you can finish the tag with a closing slash, like this:</P>
+              <pre class="prettyprint">
+&lt;img src="landscape.jpg" /&gt;                
+              </pre>
+            </div>
+
+            <!-- HTML Attributes Explained -->
+            <div class="tab-pane" id="HTML_attributes">
+              <h1>HTML Attributes Explained</h1>
+              <pre class="prettyprint">
+&lt;img src="landscape.jpg" /&gt; 
+              </pre>
+              <p>What's that "src=" business all about? Most HTML tags can take additional parameters that tell them how to behave, or how to display. These additional parameters are called "attributes." The img tag, which is used to insert an image in a page, is meaningless unless you tell it which image to insert! In the case of the img tag, the src attribute is required. </p>
+              <p>In other cases, attributes are optional. For example, the &lt;hr /&gt; tag creates a horizontal rule across the page. But what if you only want the rule to go  halfway across the page? In that case, you could use the "width" attribute on the hr tag: </p>
+              <pre class="prettyprint">
+&lt;hr width="50%"&gt;
+              </pre>
+              <p>Note that the value of each attribute is always enclosed in double quotes. </p>
+              <p>In many cases, you'll be putting multiple attributes on a tag. In that case, simply separate them with spaces. It does not matter what order attributes come in. For example: </p>
+              <pre class="prettyprint">
+&lt;img src="landscape.jpg" width="100" height="50" /&gt;
+              </pre>
+              <p>There are many attributes, and not all of them apply to all tags. Until you get comfortable with the range of available attributes, you'll want to refer to an official listing, such as <a href="https://www.w3schools.com" target="_blank">this one</a> hosted by w3schools. Click on any tag name in that list to see that tag's available attributes. </p>
+              <p>In this tutorial, we'll work a bit with the "style" attribute, which takes this form: </p>
+              <pre class="prettyprint">
+&lt;p style="color:green; font-family:Arial;"&gt;
+              </pre>
+              <p>Stylistic declarations like this are generally handled by an external CSS stylesheet, but for the sake of simplicity, we'll be placing styles directly into our tags as attributes.</p>
+            </div>
+
+            <!-- Starting an HTML Document -->
+            <div class="tab-pane" id="starting_HTML">
+              <h1>Starting an HTML Document</h1>
+              <p> While the content inside most tags is displayed on-screen, some is not. For starters, every HTML document must include some "meta" information at the top – information about the page itself that is critical to the web browser, but not shown to the reader.</p>
+              <p>Let's create a Web page that has the tags you will always need to include, along with some of the other more common tags and attributes used to design a page.</p>
+              <p><strong>Note:</strong> The "meta" information described in this section is generally inserted for you automatically when you use an advanced HTML editor such as Dreamweaver or TextMate. However, we cover it here because you may be using a simple text editor such as Notepad or TextEdit that doesn't insert the meta information for you. Also, it's important to do it manually just once, so you know what's going on.</p>
+              <p>First, launch your text editor and and create a new, blank document (File | New).</p>
+              <p>We need to tell the browser that this is an HTML document. At the top of your blank text page type:</p>
+              <pre class="prettyprint">
+&lt;html&gt;               
+              </pre>
+              <p>Press the Return or Enter key on your keyboard a few times to give yourself some breathing room, then add the closing HTML tag: </p>
+              <pre class="prettyprint">
+&lt;/html&gt;                
+              </pre>
+              <p> Everything else you do in this document will be "nested" between these two "container" tags, so put your cursor somewhere between the two tags.</p>
+              <p>Note: HTML is "whitespace-agnostic" – that means it ignores all line breaks, tabs, and series of spaces you enter. To add specific formatting to your document, you'll need to use HTML tags. For example, you can put one hard return or 100 hard returns between your paragraphs, and it won't matter a bit – all that matters is that you surround your paragraphs with tags.</p>
+              <p>Tip: Remember to close every tag! Failure to close tags properly can lead to confusing problems down the line. </p>
+              <h2>Page Header</h2>
+              <p>To continue creating the HTML "skeleton" of your document, we will create a "header" section by entering this code: </p>
+              <pre class="prettyprint">
+&lt;head&gt;
+     
+&lt;/head&gt;
+              </pre>
+              <p>Nothing inside the "head" container tag will be displayed to the user. Later, as you learn more, you will use this section to define document properties, include external JavaScript and CSS files, add document keywords, and more. For now, within the head section, enter a title for your page, surrounded by opening and closing title tags. Your document should now look like this: </p>
+              <pre class="prettyprint">
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;My First HTML Page&lt;/title&gt;
+    &lt;/head&gt;
+&lt;/html&gt;                
+              </pre>
+              <p> The title is not displayed on the page, but it will show up in the very top bar of a Web browser window. More importantly, the document title becomes the name by which your page will be bookmarked, and also the name search engines will use to refer to your site. Don't forget to add a unique title tag to every page of your site. For example, these might be the titles for three pages of your site:</p>
+              <p>Joe's Donuts - Home Joe's Donuts - About Joe's Donuts – Products</p>
+              <p>That way your pages will stand out as distinct entries in search engine results and in people's bookmarks. </p>
+              <h2></h2>
+              <p> The next critical tag in your document is the "body" tag. Everything that comes between the opening and closing tags will be displayed to the user. Put your cursor at the end of the tag and hit Return a couple of times, then type:</p>
+              <pre class="prettyprint">
+&lt;body&gt;
+              </pre>
+              <p>At the end of your document, but before the closing tag, you need the closing body tag:</p>
+              <pre class="prettyprint">
+&lt;/body&gt;
+              </pre>
+              <p>Now go ahead and put a simple paragraph with a bit of formatting information in between the two body tags. At this point, your document should look something like this:</p>
+              <pre class="prettyprint">
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;My First HTML Page&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;p>My &lt;strong&gt;hovercraft&lt;/strong&gt; is full of eels.&lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;             
+              </pre>
+              <p> Now, let's give our page a background color. Because we want to style the entire body section of the page, we're going to put some attributes on the tag:</p>
+              <pre class="prettyprint">
+&lt;body style="background-color:beige;"&gt;
+              </pre>
+              <p>"Beige" is nice and friendly, but most of the time, you won't be referring to colors by their friendly names - there are only 150 of them, and most of the time you'll want more nuance than that. More commonly, you'll see HTML/CSS colors referenced by hexadecimal values, like this:</p>
+              <pre class="prettyprint">
+&lt;body style="background-color:#F5F5DC;"&gt;
+              </pre>
+              <p>Looks hairy? Don't worry about it. There are tons of online tools (such as this one) that will help you find hexadecimal color values easily. In addition, the color picking tools in Photoshop, Flash, Dreamweaver, and virtually any tool that deals with the web will let you copy and paste hexadecimal color values – this lets you easily match background colors to image colors, for example.</p>
+              <img src="img/doc_start.png" alt="#" width="100%" class="img-responsive">
+              <i>There are many HTML "hexadecimal" color pickers available – some on the web, others as desktop applications, others built into common multimedia applications and text editors.</i>
+            </div>
+
+            <!-- Previewing Your Work -->
+            <div class="tab-pane" id="preview_work">
+              <h2>Previewing Your Work</h2>
+              <p>Time to see how your code looks in a real web browser. Start by saving your document into the "site" folder you created at the beginning of this tutorial. If this is your imaginary homepage, you'll probably want to save it with the filename "index.html" (we'll explain why that filename is important in another tutorial).</p>
+              <p>Now go to your favorite web browser and pull down File | Open. Navigate to the HTML document you just created, and open it up to see how it looks (in many cases, you can also simply drag the HTML document onto an open browser window or onto its icon).</p>
+              <p>Some HTML editing tools (such as Dreamweaver and TextMate) have preview options built in, usually in the toolbar.</p>
+              <p>Leave this browser window open. To continue reviewing your code changes, you'll be toggling back and forth between your web browser and text editor. Make a change, save your HTML document, toggle to your browser, click Reload/Refresh to see your changes, toggle back to your editor, and so forth.</p>
+              <img src="img/preview.png" alt="#" width="100%" class="img-responsive">
+            </div>
+
+            <!-- Headings -->
+            <div class="tab-pane" id="headings">
+              <h2>Headings</h2>
+              <p>Now let's give our page a title that people can read.</p>
+              <p>To add headings in a larger size at the top of a page, or to add subheads to break up the text further down on a page, you use the heading tag:</p>
+              <pre class="prettyprint">
+&lt;h?&gt;
+              </pre>
+              <p>Where for ? you substitute a number from 1 - 6 that appears to control the font size of the heading text.</p>
+              <p><strong>Note:</strong> HTML tags, or elements, fall into two categories: "Block-level elements," which by default create an empty line above and below them, and "inline elements," which do not. Headings are a good example of block-level elements, which means they'll automatically get a line break above and below. The &lt;strong&gt; tag, in contrast, works in the middle of text without creating linebreaks above and blow. For this reason, heading levels cannot be used in the middle of a paragraph.</p>
+              <p>The largest size is h1, and the smallest size is h6. In each case, after you type the text you want, you need to add the corresponding closing heading tag.</p>
+              <pre class="prettyprint">
+&lt;h1&gt;Welcome to My First HTML Page&lt;/h1&gt;
+&lt;h2&gt;Welcome to My First HTML Page&lt;/h2&gt;
+&lt;h3&gt;Welcome to My First HTML Page&lt;/h3&gt;
+&lt;h4&gt;Welcome to My First HTML Page&lt;/h4&gt;
+&lt;h5&gt;Welcome to My First HTML Page&lt;/h5&gt;
+&lt;h6&gt;Welcome to My First HTML Page&lt;/h6&gt;
+              </pre>
+              <img src="img/headings.png" alt="#" width="100%" class="img-responsive">
+              <p class="italic">Heading levels 1-6 as rendered by a browser, without specifying any font size at all.</p>
+              <p>So why do we say above "appears to control the font size" rather than "controls the font size?" Because we haven't actually specified a font size. Technically speaking, heading levels should be used to specify the relative importance of the heading on the page, much as you would when using heading levels to create outlines in MS Word. Without stylistic information, the Web browser will render the heading levels with its default settings, which use a hierarchy of sizes. Later, when you learn to style documents with CSS (cascading style sheets), you'll find that you have total control over the way heading levels are styled and sized.</p>
+              <p>The most important thing is this: Use heading levels to represent the relative importance of headings on a page in a hierarchical fashion. Do not think of them simply as font sizing options.</p>
+            </div>
+
+            <!-- Working With Text -->
+            <div class="tab-pane" id="working_text">
+              <h1>Working With Text</h1>
+              <p>You insert normal text by using the paragraph tag:</p>
+              <pre class="prettyprint">
+&lt;p&gt;
+              </pre>
+              <p>Because it's a block-level element, the paragraph tag automatically creates an empty line above and below itself. Let's create a new paragraph in the section, under the heading:</p>
+              <pre class="prettyprint">
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;My First HTML Page&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body style="background-color: #F5F5DC;"&gt;
+    &lt;div align="center"&gt;&lt;h1&gt;Welcome to My First HTML Page&lt;/h1&gt;&lt;/div&gt;
+    &lt;p&gt;I'm learning HTML with Codify Academy&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;   
+              </pre>
+              <img src="#" alt="#">
+              <p>Notice that the text aligns to the left, because it is not contained in the div tag that aligns center.</p>   
+              <h2>Emphasizing text</h2>   
+              <p>We can emphasize text by using the &lt;strong&gt; and &lt;em&gt; tags. &lt;strong&gt; makes text stand out as <strong>bold</strong> by default, and &lt;em&gt; emphasizes (italicizes) text.&lt;/em&gt;</p>
+              <p>Let's use these two tags – strong and em – in our sentence:</p>
+              <pre class="prettyprint">
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;My First HTML Page&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body style="background-color: #F5F5DC;"&gt;
+    &lt;div align="center"&gt;&lt;h1&gt;Welcome to My First HTML Page&lt;/h1&gt;&lt;/div&gt;
+    &lt;p&gt;I'm learning &lt;em&gt;HTML&lt;/em&gt; with &lt;strong&gt;Codify Academy&lt;/strong&gt;&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;   
+              </pre>
+              <img src="#">
+              <p>Now let's write a new sentence inside the same paragraph, while putting some space in between the lines by using the break tag:</p>
+              <pre class="prettyprint"> &lt;br /&gt;
+              </pre>
+              <p>Which is the equivalent of holding down Shift while you hit Enter/Return in a word processor – you get a line break, but not a new paragraph.</p>
+              <pre class="prettyprint">
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;My First HTML Page&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body style="background-color: #F5F5DC;"&gt;
+    &lt;div align="center"&gt;&lt;h1&gt;Welcome to My First HTML Page&lt;/h1&gt;&lt;/div&gt;
+    &lt;p&gt;I'm learning &lt;em&gt;HTML&lt;/em&gt; with &lt;strong&gt;Codify Academy&lt;/strong&gt;&lt;br /&gt;  Here is one of my favorite Web sites.&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;               
+              </pre>
+              <img src="#">
+              <p>Notice that your second sentence is on a new line, but still contained within the same paragraph.</p>
+            </div>
+
+            <!-- Creating Links -->
+            <div class="tab-pane" id="links">
+              <h1>Creating Links</h1>
+              <p>Let's create a link so the user can easily navigate to the favorite Web site. In HTML, links are created with the "anchor" tag, represented by &lt;a/&gt;. But as with the img tag, an anchor without an accompanying URL is meaningless, so you'll need an attribute to go with it – the "href" attribute. The value of the href attribute will be the URL of the page you're linking to. Therefore, a hyperlink/anchor tag looks like this:</p>
+              <pre class="prettyprint">
+&lt;a href="http://webpageaddress.com"&gt;Name of the Hyperlinked Page&lt;/a&gt;
+              </pre>
+              <p>Remember to put double quote marks around all attribute values, and to close your link with &lt;a/&gt;.</p>
+              <p>It's important to include the <strong>full URL</strong> when linking to an external site – that means you <strong>must</strong> include the http:// portion of the URL in your href.</p>
+              <p><strong>Tip:</strong> To avoid typos that will break links, always copy/paste URLs into your links, rather than trying to type them by hand.</p>
+              <h2>Linking to External Sites</h2>
+              <P>We're going to use Google at http://www.google.com as an example and use "Web sites" as the linkable text. So we'll type:</p>
+              <pre class="prettyprint">
+&lt;p&gt;Here is one of my favorite &lt;a href="http://www.google.com"&gt;Web sites&lt;/a&gt;.&lt;/p&gt;
+              </pre>
+              <p>Your document should now look like this: </p>
+              <pre class="prettyprint">
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;My First HTML Page&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body style="background-color: #F5F5DC;"&gt;
+    &lt;div align="center"&gt;&lt;h1&gt;Welcome to My First HTML Page&lt;/h1&gt;&lt;/div&gt;
+    &lt;p&gt;
+      I'm learning &lt;em&gt;HTML&lt;/em&gt; with &lt;strong&gt;Codify Academy&lt;/strong&gt;
+      &lt;br /&gt;  
+      &lt;a href="http://www.google.com"&gt;Here is one of my favorite Web sites.&lt;/a&gt;
+    &lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;                 
+              </pre>
+              <img src="">
+              <h2>Linking to Another Page on The Same Site</h2>
+
+              <p>Links can point either to external sites, or to other pages on your own site.</p>
+              <p>To link to another page on the same site, you don't need the full http://domain.com portion of the href attribute – you can simply refer to the destination page by filename (or by foldername/filename if the file is in another folder). If the other page is in the same folder as your main page, just enter the file name for that page. Assuming you had another page in your "site" folder named otherpage.html that you wanted to link to, on your main Web page you would type:</p>
+              <pre class="prettyprint">&lt;a href="otherpage.html"&gt;My other page&lt;/a&gt;
+              </pre>
+              <p>If the file is in another folder you would include that path:</p>
+              <pre class="prettyprint">
+&lt;a href="foldername/otherpage.html"&gt;My other page&lt;/a&gt;
+              </pre>
+            </div>
+            <!-- Horizontal Rule -->
+            <div class="tab-pane" id="horizontal_rule">
+              <h1>Horizontal Rule</h1>
+              <p>Another way to break up a page is to insert a horizontal rule. You do that by adding the horizontal rule tag:</p>
+              <pre class="prettyprint">
+&lt;hr /&gt;
+              </pre>
+
+              <p>This tag just adds a horizontal line to the page. Since <code>&lt;hr /&gt;</code> is a block-level element, it will break any text preceding it to a line above, and any text after it to a line below. Let's add a horizontal rule right after the paragraph we've been working with. On a new line just below the hyperlink, type in <code>&lt;hr /&gt;</code>.</p>
+              <p>Your page should now look like this:</p>
+              <img src="">
+            </div>
+
+            <!-- Inserting Images -->
+            <div class="tab-pane" id="inserting_images">
+              <h1>Inserting Images</h1>
+              <p>You can insert images into a page by using the img tag with the src attribute, like this:</p>
+              <pre class="prettyprint">
+&lt;img src="picture.jpg"&gt;
+              </pre>
+              <p>Wherever you type this tag on your Web page is where the image you specified will appear in the browser.</p>
+              <p>The image itself is a separate graphic file in.jpg, .gif, or .png format (use JPGs for photographs, and GIFs or PNGs for line art or most screenshots).</p>
+              <p>The graphic file should be stored in the same folder as the Web page you are creating, or in a subfolder called "images."</p>
+              <p>Let's put an image tag on a Web page. Here's an image (named computerlab.jpg) that you can download onto your desktop to use on your page:</p>
+              <img src="">
+              <h2>Image spacing and alignment</h2>
+              <p>Let's add some descriptive text. Type in "Here is the computer lab where I learned HTML" directly after the close of the img tag.</p>
+              <p>Notice that the text butts up against the edge of the image and wraps around the bottom. To make the text wrap correctly, we need to add an "align" attribute to the image. You can align things to the left or right by using align="left/right".</p>
+              <pre class="prettyprint">
+&lt;img src="computerlab.jpg" align="left" /&gt;
+              </pre>
+              <p>Here is the computer lab where I learned HTML.</p>
+              <img src="">
+              <p>Now the text aligns to the top of the photo and takes up all of the available space on the right. You'll also probably want to create some space around the image, to give it some breathing room. Do this with the "hspace" and "vspace" attributes:</p>
+              <pre class="prettyprint">
+&lt;img src="computerlab.jpg" hspace="7" align="left"&gt;
+              </pre>
+              <img src="">
+              <p>We've added some extra text here to demonstrate the effects of both align="left" and hspace="7".</p>
+              <p>hspace sets the horizontal spacing around an image (a corresponding vspace attribute sets the vertical spacing, but you'll find it's rarely useful). Both attributes are measured in pixels. Again, the order of attributes on a tag is irrelevant.</p>
+              <p><strong>Note:</strong> Rather than using align=left/right and hspace/vspace, it's preferable to address design and layout problems such as these with Cascading Style Sheets. The techniques shown here are for educational purposes.</p>
+              <p>Because images can't be "read" by search engines, nor can they be seen by blind users, you also need to give images an attribute for "alternative text." Notice when you mouse over an image in Safari or Internet Explorer that a small text balloon appears. This is an image's "alt text."</p>
+              <p>In your img tag, add it like this:</p>
+              <pre class="prettyprint">
+&lt;img src="computerlab.jpg" … alt="Computer Lab"&gt;
+              </pre>
+            </div>
+
+            <!-- Lists -->
+            <div class="tab-pane" id="lists">
+              <h1>Lists</h1>
+              <p> Lists are an important way of organizing content. They're commonly used not just to set off displays of important information on your page, but also (when used in combination with CSS) to create navigation menus.</p>
+              <p>There are three types of lists: unordered, ordered, and definition. Unordered lists use the </p>
+              <pre class="prettyprint">
+&lt;ul&gt;                
+              </pre>
+              <p>tag and look like this: </p>
+              <pre class="prettyprint">
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;My First HTML Page&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body style="background-color: #F5F5DC;"&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Unordered information&lt;/li&gt;
+      &lt;li&gt;Ordered information&lt;/li&gt;
+      &lt;li&gt;Definition lists&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/body&gt;
+&lt;/html&gt;                
+              </pre>
+              <img src="">
+              <p>Ordered lists use the </p>
+              <pre class="prettyprint">
+&lt;ol&gt;                
+              </pre>
+              <p>tag and look like this:</p>
+              <pre class="prettyprint">
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;My First HTML Page&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body style="background-color: #F5F5DC;"&gt;
+    &lt;ol&gt;
+      &lt;li&gt;Unordered information&lt;/li&gt;
+      &lt;li&gt;Ordered information&lt;/li&gt;
+      &lt;li&gt;Definition lists&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/body&gt;
+&lt;/html&gt;                
+              </pre>
+              <p>Both types of lists use the </p>
+              <pre class="prettyprint">
+&lt;li&gt;                
+              </pre>
+              <p>tag to create the bullet or numbered points. </p>
+              <img src="">
+              <p>Notice that when you enter a new list item, the list re-numbering will be taken care of for you. Never hard-code numbered lists – let the HTML do it for you!</p>
+              <p>The final list type is a "definition list," which involves a main phrase, and then a definition for that phrase that appears indented and on a separate line. </p>
+              <p>The</p>
+              <pre class="prettyprint">
+&lt;dl&gt;                
+              </pre>
+              <p>tag defines the definition list. The </p>
+              <pre class="prettyprint">
+&lt;dt&gt;                 
+              </pre>
+              <p>tag is used for the main phrase The </p>
+              <pre class="prettyprint">
+&lt;dd&gt;                 
+              </pre>
+              <p>tag is for the definition itself (think "dd = Data Definition").</p>
+              <pre class="prettyprint">
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;My First HTML Page&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body style="background-color: #F5F5DC;"&gt;
+    &lt;dl&gt;
+      &lt;dt&gt;This names an item&lt;/dt&gt;
+      &lt;dd&gt;This defines the item&lt;/dd&gt;
+   
+      &lt;dt&gt;This names another item&lt;/dt&gt;
+      &lt;dd&gt;This defines the other item&lt;/dd&gt;
+    &lt;/dl&gt;
+   &lt;/body&gt;
+&lt;/html&gt;             
+              </pre>
+              <img src="">
+              <p>You can also "nest" your lists. For extra credit, try this: Place your cursor anywhere you might insert a normal list item. But instead of inserting an</p>
+              <pre class="prettyprint">
+&lt;li&gt;
+              </pre>
+              <p>start a whole new list instead, complete with</p>
+              <pre class="prettyprint">
+&lt;ol&gt;
+              </pre>
+              <p>or</p>
+              <pre class="prettyprint">
+&lt;ul&gt;
+              </pre>
+              <p>containers. Notice how the nested list is rendered by the browser, with logical indentation reflecting the hierarchy you've created. This can be a very powerful tool!</p>
+              <pre class="prettyprint">
+&lt;ul&gt;
+  &lt;li&gt;Unordered information&lt;/li&gt;
+  &lt;li style="list-style: none"&gt;
+    &lt;ul&gt;
+      &lt;li&gt;eas&lt;/li&gt;            
+      &lt;li&gt;Carrots&lt;/li&gt;
+      &lt;li style="list-style: none">
+        &lt;ol&gt;
+          &lt;li&gt;You can even mix list types&lt;/li&gt;
+          &lt;li&gt;When nesting lists&lt;/li&gt;
+        &lt;/ol&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+   &lt;/li&gt;
+   &lt;li&gt;More information&lt;/li&gt;
+&lt;/ul&gt;
+              </pre>
+              <img src="">
+            </div>
+
+            <!-- Working With Tables -->
+            <div class="tab-pane" id="tables">
+              <h1>Working With Tables</h1>
+              <p>Tables can be used to arrange "columnar" data, anywhere you have multiple rows and columns of text. An HTML table is a series of nested tags for identifying rows and cells (columns are implied, never declared). A table cell can contain any type of data – plain text, images, video, etc. Table rows and cells can have independent background colors, which gives you a great deal of formatting potential.</p>
+              <p>First we have the outer</p>
+              <pre class="prettyprint">
+&lt;table&gt;
+              </pre>
+              <p>tag, which can take several attributes. Much like the</p>
+              <pre class="prettyprint">
+&lt;body&gt;
+              </pre>
+              <p>tag, you can give the table a background color using <code>style="background-color:#99ccff"</code>. You can also specify the table's width, using width="number" where the number is a pixel value.</p>
+              <p>The cellpadding attribute creates space within cells. The cellspacing attribute creates space outside of the border of a cell. You can give a table a visible border using border="number" (set the border attribute to 0 for a borderless table).</p>
+              <p>Let's see an example of table attributes in action.</p>
+              <pre class="prettyprint">
+&lt;p&gt;With cellpadding:&lt;/p&gt; 
+&lt;table border="1" cellpadding="10" style="background-color:#D4EBF4"&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Row 1, Cell 1&lt;/td&gt;
+    &lt;td&gt;Row 1, Cell 2&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Row 2, Cell 1&lt;/td&gt;
+    &lt;td&gt;Row 2, Cell 2&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+              </pre>
+              <pre class="prettyprint">
+&lt;p&gt;An example with cellspacing:&lt;/p&gt; 
+&lt;table border="1" cellspacing="10" style="background-color:#D4EBF4"&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Row 1, Cell 1&lt;/td&gt;
+    &lt;td&gt;Row 1, Cell 2&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Row 2, Cell 1&lt;/td&gt;
+    &lt;td&gt;Row 2, Cell 2&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+              </pre>
+              <img src="">
+              <p>In this example, we have a <code>&lt;table&gt;</code> container tag with some attributes. Within the <code>&lt;table&gt;</code> tag, we have two sets of <code>&lt;tr&gt;</code> container tags ("tr" stands for "table row"). And within each <code>&lt;tr&gt;</code> container, we have two sets of <code>&lt;td&gt;</code> containers ("td" stands for "table data," but you should think "cell"). Inside each <code>&lt;td&gt;</code> container we place the content we want to appear in that cell.</p>
+
+              <p>Working with more advanced tables can become tricky. For example, you may want the top two cells to be merged into a single wide cell that spans two or more columns. You may want to specify table header rows that appear with a different background color and font size, and so on. While it's important to learn about table tags and what they do, this is definitely an area where graphical HTML tools such as Dreamweaver make life a lot easier (just try moving all of column 13 over to column 16 in a big complicated table when editing HTML by hand!).</p>
+              <p>To learn more about HTML tables, see the <a href="http://www.w3schools.com/htmL/html_tables.asp" target="_blank">tables</a> section of the W3Schools tutorial.</p>
+              <p><strong>Note:</strong> For years, web developers used tables to create entire Web site layouts. Rather than just putting tabular data into cells, a developer might use one cell to contain the top banner image, another to hold the left navigation sidebar, another to hold the main content, and another the footer. This is a simple solution to basic page layout, but it has many problems, especially as tables become complex and sites grow large. Cascading Style Sheets were introduced to get around these problems, and are now used to lay out most web sites. You might want to start with table-based layout when learning HTML because it's easy. But keep in mind that table-based layouts will almost certainly cause you heartache down the road. <strong>Just keep in the back of your mind: "Tables are for displaying columnar data, not page layout!"</strong></p>
+            </div>
+
+            <!-- Being Semantic -->
+            <div class="tab-pane" id="semantic">
+              <h1>Being Semantic</h1>
+              <p>In the Heading Levels section of this tutorial, we discussed the importance of using specific heading levels because they describe the outline/hierarchy of headings in the document, not just because you like the size they display at by default. You should extend this principle to all aspects of the HTML you write.</p>
+              <p>In other words, don't use the <code>&lt;blockquote&gt;</code> tag just because it makes text indented by default - use it because you're quoting something or someone and need it set off from the main text (there are better ways to indent text). Don't use HTML tables to lay out your pages - use tables if you have tabular data to display.  In other words, choose HTML tags according to their logical meaning in the structure of the document, not because you happen to like the way the browser displays that tag by default. You can take full control over how things are displayed with CSS. The point of HTML is to give a document a logical markup structure.</p>
+              <p>In ideal circumstances, every tag in your document should adequately describe the piece of content it surrounds, and there should be little to no formatting-related information in it. All display and formatting problems should be handled with CSS. A good HTML document should be stripped free of all or most formatting data.</p>
+              <p>This practice is known as "semantic" HTML and is the core of best practices in modern web development.</p>
+              <hr>
+              <p>Congratulations! This has been a whirlwind tour of basic HTML concepts. It's by no means complete, and there's still much to learn, but now that you've gotten your feet wet, the sky's the limit.</p> 
+            </div>
+          </div>
+        </div>
+
+        
+
+        
+      </section>
+
+
+
+    
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.1.min.js"><\/script>')</script>
+
+        <script src="js/vendor/bootstrap.min.js"></script>
+
+        <script src="http://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+
+        <script src="js/main.js"></script>
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X');ga('send','pageview');
+        </script>
+    </body>
+</html>

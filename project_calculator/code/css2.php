@@ -1,0 +1,3 @@
+span.clear {
+  float: left;
+}

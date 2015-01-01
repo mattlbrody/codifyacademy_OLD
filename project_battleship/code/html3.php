@@ -1,0 +1,12 @@
+&lt;!-- battleship board --&gt;
+&lt;div id="board"&gt;
+  &lt;!-- battleship message display --&gt;
+  &lt;h1 id="messageArea"&gt;&lt;/h1&gt;
+  &lt;!-- battleship user inputs --&gt;
+  &lt;form&gt;
+    &lt;div id="input-group"&gt;
+      &lt;input type="text" id="guessInput" placeholder="A0" autofocus class="form-control"&gt;
+      &lt;input type="button" id="fireButton" value="Fire!" class="btn btn-danger"&gt;
+    &lt;/div&gt;
+  &lt;/form&gt;
+&lt;/div&gt;

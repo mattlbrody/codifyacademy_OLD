@@ -1,0 +1,9 @@
+[26-Jun-2014 12:10:21 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE) in /home1/sambrody/public_html/codifyacademy.com/fd/process.php on line 21
+[26-Jun-2014 12:10:47 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE) in /home1/sambrody/public_html/codifyacademy.com/fd/process.php on line 21
+[26-Jun-2014 12:11:24 America/Chicago] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/sambrody/public_html/codifyacademy.com/fd/header.php:19) in /home1/sambrody/public_html/codifyacademy.com/fd/process.php on line 19
+[26-Jun-2014 20:13:58 America/Chicago] PHP Warning:  require_once(class.phpmailer.php): failed to open stream: No such file or directory in /home1/sambrody/public_html/codifyacademy.com/fd/fbc.php on line 3
+[26-Jun-2014 20:13:58 America/Chicago] PHP Fatal error:  require_once(): Failed opening required 'class.phpmailer.php' (include_path='.:/opt/php54/lib/php') in /home1/sambrody/public_html/codifyacademy.com/fd/fbc.php on line 3
+[26-Jun-2014 20:14:31 America/Chicago] PHP Warning:  require_once(class.phpmailer.php): failed to open stream: No such file or directory in /home1/sambrody/public_html/codifyacademy.com/fd/fbc.php on line 3
+[26-Jun-2014 20:14:31 America/Chicago] PHP Fatal error:  require_once(): Failed opening required 'class.phpmailer.php' (include_path='.:/opt/php54/lib/php') in /home1/sambrody/public_html/codifyacademy.com/fd/fbc.php on line 3
+[26-Jun-2014 20:14:34 America/Chicago] PHP Warning:  require_once(class.phpmailer.php): failed to open stream: No such file or directory in /home1/sambrody/public_html/codifyacademy.com/fd/fbc.php on line 3
+[26-Jun-2014 20:14:34 America/Chicago] PHP Fatal error:  require_once(): Failed opening required 'class.phpmailer.php' (include_path='.:/opt/php54/lib/php') in /home1/sambrody/public_html/codifyacademy.com/fd/fbc.php on line 3

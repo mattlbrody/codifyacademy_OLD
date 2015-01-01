@@ -1,0 +1,17 @@
+.screen {
+  height: 40px;
+  width: 212px;	
+  float: right;	
+  padding: 0 10px;	
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  box-shadow: inset 0px 4px rgba(0, 0, 0, 0.2);
+
+  /* Typography */
+  font-size: 17px;
+  line-height: 40px;
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  text-align: right;
+  letter-spacing: 1px;
+}
