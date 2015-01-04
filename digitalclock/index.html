@@ -23,7 +23,7 @@
     <![endif]-->
   </head>
 
-  <body onload="displayTime()">
+  <body onload="startTime()">
       
     <div class="container first">
         <h1 class="text-center">Codify Academy - A Ticking Clock!</h1>
@@ -90,14 +90,14 @@
 
                 <ol>
                   <li>Start a new function that will do all the work calculating and showing our time. We will be writing most of our code inside this function.</li>
-                  <li>Create a new function and give it a name that makes sense to you. Since this function will ultimately display the time on our page, we named ours displayTime.</li>
+                  <li>Create a new function and give it a name that makes sense to you. Since this function will ultimately display the time on our page, we named ours startTime.</li>
                 </ol>
 
                 <div class="code_div">
                     <div class="well well-sm code">
                       <code>
                         <span class="r in1">function</span>
-                        <span class="g">displayTime</span><span class="b">() {</span>
+                        <span class="g">startTime</span><span class="b">() {</span>
                         <br><br>
                         <span class="b in1">}</span>                      </code>
                     </div>
@@ -116,7 +116,7 @@
                     <div class="well well-sm code">
                       <code>
                         <span class="r">function</span>
-                        <span class="g">displayTime</span><span class="b">() {</span>
+                        <span class="g">startTime</span><span class="b">() {</span>
                         <br>
                         <span class="r in1">var</span>
                         <span class="b">currentTime</span>
@@ -140,7 +140,7 @@
                     <div class="well well-sm code">
                       <code>
                         <span class="r">function</span>
-                        <span class="g">displayTime</span><span class="b">() {</span>
+                        <span class="g">startTime</span><span class="b">() {</span>
                         <br>
                         <span class="r in1">var</span>
                         <span class="b">currentTime</span>
@@ -182,7 +182,7 @@
                     <div class="well well-sm code">
                       <code>
                         <span class="r">function</span>
-                        <span class="g">displayTime</span><span class="b">() {</span>
+                        <span class="g">startTime</span><span class="b">() {</span>
                         <br>
                         <span class="r in1">var</span>
                         <span class="b">currentTime</span>
@@ -210,7 +210,7 @@
                     <div class="well well-sm code">
                       <code>
                         <span class="r">function</span>
-                        <span class="g">displayTime</span><span class="b">() {</span>
+                        <span class="g">startTime</span><span class="b">() {</span>
                         <br>
                         <span class="r in1">var</span>
                         <span class="b">currentTime</span>
@@ -239,7 +239,7 @@
                     <div class="well well-sm code">
                       <code>
                         <span class="r">function</span>
-                        <span class="g">displayTime</span><span class="b">() {</span>
+                        <span class="g">startTime</span><span class="b">() {</span>
                         <br>
                         <span class="r in1">var</span>
                         <span class="b">currentTime</span>
@@ -355,9 +355,11 @@
                         <span class="r">h</span>
                         <span class="b">+</span>
                         <span class="g">":"</span>
+                        <span class="b">+</span>
                         <span class="r">m</span>
                         <span class="b">+</span>
                         <span class="g">":"</span>
+                        <span class="b">+</span>
                         <span class="r">s<span class="g">;</span></span>
                       </code>
                     </div>
@@ -391,14 +393,14 @@
                 <ol>
                   <li>Back in the HTML tab let's erase the text and divs that are there and make a single &lt;div&gt; in our &lt;body&gt;.</li>
                   <li>Go ahead and give that &lt;div&gt; an id of "time". Remember that we used the ID time in the document.getElementById() method.</li>
-                  <li>Finally add the onload command to our body and add our function displayTime here so it loads correctly!</li>
+                  <li>Finally add the onload command to our body and add our function startTime here so it loads correctly!</li>
                 </ol>
 
                 <div class="code_div">
                     <div class="well well-sm code">
                       <code>                   
                         <span class="g">&lt;body</span>
-                        <span class="b">onload="</span><span class="r">displayTime</span><span class="b">()"</span><span class="g">&gt;</span>
+                        <span class="b">onload="</span><span class="r">startTime</span><span class="b">()"</span><span class="g">&gt;</span>
                         <br>
                         <span class="g in1">&lt;div</span><span class="b"> id=</span><span class="r">"time"</span><span class="g">&gt;&lt;/div&gt;</span>
                         <br>         
@@ -410,7 +412,7 @@
 
                 <br>
 
-                <p>Next we need to create the function and call it checkTime - since we already called this below, (make sure it is above our displayTime function.) and pass the parameter "i" into it. and open with curly bracer's</p>
+                <p>Next we need to create the function and call it checkTime - since we already called this below, (make sure it is above our startTime function.) and pass the parameter "i" into it. and open with curly bracer's</p>
 
                 <div class="code_div">
                     <div class="well well-sm code">
@@ -547,14 +549,14 @@
 
                 <p>So our clock works and looks pretty good but something is missing. It isn't ticking, it shows the current time the page loads, but doesn't keep counting forward. Let's fix that.</p>
 
-                <p>The reason our clock is frozen is that it is only running through the displayTime function once, when the page loads. We need to write some code to tell it to run every second.</p>
+                <p>The reason our clock is frozen is that it is only running through the startTime function once, when the page loads. We need to write some code to tell it to run every second.</p>
                 
                 <div class="code_div">
                     <div class="well well-sm code">
                       <code>
                         <span class="g">setTimeout</span><span class="b">(</span><span class="r">function</span><span class="b">() {</span>
                         <br>
-                        <span class="g in1">displayTime</span><span class="b">()</span>
+                        <span class="g in1">startTime</span><span class="b">()</span>
                         <br>
                         <span class="b">},</span>
                         <span class="r">1000</span><span class="b">);</span>

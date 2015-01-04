@@ -7,7 +7,7 @@ function checkTime(i) {
     return i;   
 }
 
-function displayTime() {
+function startTime() {
     var currentTime = new Date();
     var h = currentTime.getHours();
     var m = currentTime.getMinutes();
@@ -24,19 +24,9 @@ function displayTime() {
     
     document.getElementById('time').innerHTML = h + ":" + m + ":" + s;
     setTimeout(function () {
-        displayTime();
+        startTime();
     }, 1000);
 }
-
-
-
-// hide code 
-$('.code').hide();
-
-$('.reveal_code').on('click', function() {
-    console.log(this);
-    $(this).closest('.code_div').find('.code').slideToggle();
-});
 
 
     

@@ -125,10 +125,12 @@
 <div class="row">
   <h2>Which class date are you most interested in?</h2>
     <form method="post" action="applyemail.php">
-    <select name="date" class="form-control">  
+    <!-- <select name="date" class="form-control">  
       <option value="Manhattan Rolling Classes"> Manhattan Rolling Classes - Starting every 2 weeks</option>
       <option value="San Francisco Rolling Classes"> San Francisco Rolling Classes - Starting every 2 weeks </option>
-    </select>
+    </select> -->
+    <input type="checkbox" value="Manhattan Rolling Classes"> Manhattan Rolling Classes - Starting every 2 weeks<br />
+    <input type="checkbox" value="San Francisco Rolling Classes"> San Francisco Rolling Classes - Starting every 2 weeks
 </div>
   <div class="row">
     <h2>Basic Information</h2>
